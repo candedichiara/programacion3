@@ -6,7 +6,7 @@ function Header() {
   return (
     <React.Fragment>
     <div className="contenedorLogo">
-      <img src="" alt="" className="logo"/>
+      <img src="/images/logo.png" alt="logo" className="logo"/>
     </div>
     <nav className="nav">
         <ul className="opciones">
