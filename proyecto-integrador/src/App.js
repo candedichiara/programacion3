@@ -1,22 +1,26 @@
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Home from './screens/Home/Home'
+import Favoritos from './screens/Favoritos/Favoritos'
+import NotFound from './screens/NotFound/NotFound'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<React.Fragment>
+<div>
+      <Header />
+      <Switch>
+        <Route path='/' exact={true} component={Home} />
+        <Route path='/favoritos' component={Favoritos} />
+        <Route component={NotFound} />
+      </Switch>
+</div>
+    <Footer/>
+</React.Fragment>
+    
   );
 }
 
