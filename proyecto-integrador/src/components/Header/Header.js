@@ -5,10 +5,8 @@ import './styles.css'
 function Header() {
   return (
     <React.Fragment>
-    <div className="contenedorLogo">
-      <img src="/images/logo.png" alt="logo" className="logo"/>
-    </div>
     <nav className="nav">
+      <img src="/images/logo.png" alt="logo" className="logo"/>
         <ul className="opciones">
           <li className="opciones">
             <Link to='/'>Home</Link>
