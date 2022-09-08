@@ -1,10 +1,4 @@
-/*import React form 'react'
-
-function Home() {
-    return (
-       <p> Prueba</p>
-    )
-  }
+import React form 'react'
 
 class Home extends Component{
    constructor(props){
@@ -20,8 +14,8 @@ class Home extends Component{
    }
 
   componentDidMount ()  {
-   //busco datos
-    fetch ('https://api.themoviedb.org/3/movie/popular?api_key=' + this.state.key)
+   
+   fetch ('https://api.themoviedb.org/3/movie/popular?api_key=' + this.state.key)
     .then (res => res.json())
     .then (data => this.setState ({
       popularMovies: data.results
@@ -57,4 +51,4 @@ render () {
 
    )
 }
-export default Home; */
+export default Home; 

@@ -1,4 +1,4 @@
-/*import React, { Component } from "react";
+import React, { Component } from "react";
 
 
 class PeliculaPopulares extends Component {
@@ -37,4 +37,4 @@ class PeliculaPopulares extends Component {
   }
 }
 
-export default PeliculaPopulares; */
+export default PeliculaPopulares;
