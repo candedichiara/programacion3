@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./PeliculaPopulares.css"
 
 class PeliculaPopulares extends Component {
   constructor(props) {
@@ -23,13 +23,14 @@ class PeliculaPopulares extends Component {
 
   render() {
     return (
-      <article className="pelicula-card">
+      <article className="peliculaCard">
         <img src={"https://image.tmdb.org/t/p/original/" + this.props.datosPelicula.poster_path}alt=""/>
-        <h2>{this.props.datosPelicula.title} ({this.props.datosPelicula.release_date.slice(0,4)})</h2>
+        <h2>{this.props.datosPelicula.title} ({this.props.datosPelicula.release_date
+        })</h2>
         {
         this.state.verMas 
         ? <p>{this.props.datosPelicula.overview}</p> 
-        : <p>{this.props.datosPelicula.overview.slice(0, 100)} [...]</p>
+        : <p>{this.props.datosPelicula.overview} [...]</p>
         }
         <a onClick={() => this.masMenosInfo()} href='#'> {this.state.verMas ? "Ver menos" : "Ver mas"} </a>
       </article>
