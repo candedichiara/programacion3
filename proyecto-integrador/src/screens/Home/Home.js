@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PeliculaPopulares from '../../components/PeliculaPopulares/PeliculaPopulares'
 import Billboard from '../../components/Billboard/Billboard'
+import "./Home.css"
 
 class Home extends Component{
    constructor(props){
