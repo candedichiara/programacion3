@@ -46,8 +46,9 @@ class Billboard extends Component {
   render() {
     return (
       <article className="peliculaCard">
-        <img src={"https://image.tmdb.org/t/p/original/" + this.props.datosPelicula.poster_path}alt="" className="imagenesPelis"/>
-        <h2>{this.props.datosPelicula.title} ({this.props.datosPelicula.release_date})</h2>
+        <img src={"https://image.tmdb.org/t/p/original/" + this.props.datosPelicula.poster_path}alt="{this.props.datosPelicula.title}" className="imagenesPelis"/>
+        <h2 class="tituloPelicula">{this.props.datosPelicula.title}</h2>
+        <h3 class="tituloPelicula">({this.props.datosPelicula.release_date})</h3>
         {
         this.state.verMas 
         ? <p>{this.props.datosPelicula.overview}</p> 

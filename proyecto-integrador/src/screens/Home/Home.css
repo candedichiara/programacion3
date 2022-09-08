@@ -1,4 +1,16 @@
 
-.titulo{
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+ body {
+    background-color: rgb(255, 255, 255);
 }
+.listadoPeliculas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.titulo {
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-left: 0%;
+}
+

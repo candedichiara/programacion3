@@ -13,3 +13,10 @@
   .imagenesPelis{
       width: 50%;
   }
+  .tituloPelicula {
+    width: 100%;
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-left: 0%;
+    }

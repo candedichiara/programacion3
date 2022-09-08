@@ -1,5 +1,9 @@
+* {
+    box-sizing: border-box;
+}
 .peliculaCard{
 
+    width: 17%;
     margin:0 1rem 2rem;
     padding:1rem;
     border-radius: 10px;
@@ -7,12 +11,21 @@
     max-width:20rem;
     display:flex;
     flex-direction: column;
-    align-items: center;
-    
+    background-color: white;
+    border-style: double;
+    border-color: rgb(0, 0, 0);
+    border-width: 0,5rem;
     /*Los 3 ultimos no los toma*/
 
     }
 
     .imagenesPelis{
         width: 50%;
+    }
+    .tituloPelicula {
+    font-size: medium;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-left: 0%;
     }

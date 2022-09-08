@@ -38,11 +38,11 @@ render(){
    return (
       < >
          <h1 className="titulo">Peliculas Más Populares </h1>
-         <section> {this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>)
+         <section class="listadoPeliculas"> {this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>)
       }
          </section>
          <h1 className="titulo">En cartelera</h1>
-         <section> {
+         <section class="listadoPeliculas"> {
             this.state.cartelMovies.map ((cartelMovie, idx) => <Billboard key={cartelMovie + idx} datosPelicula={cartelMovie}/>)
          }
          </section>
