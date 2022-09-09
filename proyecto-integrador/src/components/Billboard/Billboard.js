@@ -5,8 +5,23 @@ class Billboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        verMas: 'hide'
+        verMas: 'hide',
+        favorito: false
     };
+  }
+
+
+  componentDidMount(){
+    let storage = localStorage.getItem('favoritos')
+    let storageParseado = JSON.parse(storage)
+    if(storageParseado !== null){
+      let esFavorito = storageParseado.includes(this.props.datosPelicula.id) 
+      if(esFavorito) {
+        this.setState({
+          favorito:true
+        })
+      }
+    }
   }
 
   verMas() {
@@ -42,6 +57,19 @@ class Billboard extends Component {
 
   }
 
+  removeFavorites(id){
+    let arrayFavoritos = localStorage.getItem('favoritos')
+    let arrayParseado = JSON.parse(arrayFavoritos) 
+    let filtrarStorage = arrayParseado.filter(elm => elm !== id) 
+
+    let storageToString = JSON.stringify(filtrarStorage)
+
+    localStorage.setItem('favoritos', storageToString)
+
+    this.setState({
+      favorito: false
+    })
+  }
 
   render() {
     return (

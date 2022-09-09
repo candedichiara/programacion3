@@ -5,7 +5,7 @@ class PeliculaPopulares extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        verMas: 'hide',
+        verMas: 'show',
         favorito: false
     };
   }
@@ -22,8 +22,6 @@ class PeliculaPopulares extends Component {
         })
       }
     }
-
-
   }
 
   verMas() {
@@ -93,7 +91,7 @@ class PeliculaPopulares extends Component {
               :
                 <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) }>Añadir a favoritos</button>
             }
-        <a onClick={() => this.masMenosInfo()} href='#'> {this.state.verMas ? "Ver menos" : "Ver mas"} </a>
+        <a onClick={() => this.verMas()} href='#'> {this.state.verMas ? "Ver menos" : "Ver mas"} </a>
       </article>
     );
   }
