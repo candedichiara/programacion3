@@ -16,7 +16,7 @@ function Header() {
           </li>
 
           <li className="opciones">
-            <Link to='/verTodas'>Ver todas</Link>
+            <Link to='/todas'>Ver todas</Link>
           </li>
 
         </ul>

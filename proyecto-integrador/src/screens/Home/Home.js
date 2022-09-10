@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PeliculaPopulares from '../../components/PeliculaPopulares/PeliculaPopulares'
 import Billboard from '../../components/Billboard/Billboard'
 import "./Home.css"
+import {Link} from 'react-router-dom'
 
 class Home extends Component{
    constructor(props){
@@ -40,6 +41,10 @@ render(){
          <h1 className="titulo">Peliculas Más Populares </h1>
          <section class="listadoPeliculas"> {this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>)
       }
+
+      <div>
+         <Link className="" to='/todas' > Ver todas </Link>
+      </div>
          </section>
          <h1 className="titulo">En cartelera</h1>
          <section class="listadoPeliculas"> {

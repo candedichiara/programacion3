@@ -5,8 +5,8 @@ import Footer from "./components/Footer/Footer";
 import Home from './screens/Home/Home'
 import Favoritos from './screens/Favoritos/Favoritos'
 import NotFound from './screens/NotFound/NotFound'
-import MovieDetail from './components/MovieDetail/MovieDetail';
-
+//import MovieDetail from './components/MovieDetail/MovieDetail';
+import VerTodas from './components/VerTodas/VerTodas';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route path='/' exact={true} component={Home} />
         <Route path='/favoritos' component={Favoritos} />
         <Route component={NotFound} />
-        <Route path='/' exact={true} component={Home}/>
+        <Route path='/todas' component ={VerTodas} />
       </Switch>
 </div>
     <Footer/>
