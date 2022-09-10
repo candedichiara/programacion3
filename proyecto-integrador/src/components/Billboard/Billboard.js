@@ -8,7 +8,20 @@ class Billboard extends Component {
         verMas: 'hide',
         favorito: false
     };
+    
   }
+  verMas () {
+    if (this.state.verMas === 'show') {
+        this.setState ({
+            verMas: 'hide'
+        })
+    } else {
+        this.setState ({
+            verMas: 'show'
+        })
+    }
+  }
+
 
 
   componentDidMount(){
@@ -24,17 +37,7 @@ class Billboard extends Component {
     }
   }
 
-  verMas() {
-   if (this.state.verMas === 'show'){
-    this.setState ({
-        verMas: 'hide'
-    })
-   } else {
-        this.setState ({
-            verMas: 'show'
-        })
-   }
-  }
+ 
 
 
   agregarFavoritos(id){
@@ -90,7 +93,8 @@ class Billboard extends Component {
               :
                 <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) }>Añadir a favoritos</button>
             }
-        <a onClick={() => this.masMenosInfo()} href='#'> {this.state.verMas ? "Ver menos" : "Ver mas"} </a>
+
+       <button onClick={()=>this.verMas()}>Ver más</button>
       </article>
     );
   }

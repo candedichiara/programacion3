@@ -5,10 +5,21 @@ class PeliculaPopulares extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        verMas: 'show',
+        verMas: 'hide',
         favorito: false
     };
   }
+  verMas() {
+    if (this.state.verMas === 'show'){
+     this.setState ({
+         verMas: 'hide'
+     })
+    } else {
+         this.setState ({
+             verMas: 'show'
+         })
+    }
+   }
 
 
   componentDidMount(){
@@ -22,19 +33,7 @@ class PeliculaPopulares extends Component {
         })
       }
     }
-  }
-
-  verMas() {
-   if (this.state.verMas === 'show'){
-    this.setState ({
-        verMas: 'hide'
-    })
-   } else {
-        this.setState ({
-            verMas: 'show'
-        })
-   }
-  }
+  } 
 
 
   agregarFavoritos(id){
@@ -91,7 +90,7 @@ class PeliculaPopulares extends Component {
               :
                 <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) }>Añadir a favoritos</button>
             }
-        <a onClick={() => this.verMas()} href='#'> {this.state.verMas ? "Ver menos" : "Ver mas"} </a>
+         <button onClick={()=>this.verMas()}>Ver más</button>
       </article>
     );
   }
