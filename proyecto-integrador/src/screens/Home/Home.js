@@ -39,7 +39,7 @@ render(){
    return (
       < >
          <h1 className="titulo">Peliculas Más Populares </h1>
-         <section class="listadoPeliculas"> {this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>)
+         <section className="listadoPeliculas"> {this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>)
       }
 
       <div>
@@ -47,7 +47,7 @@ render(){
       </div>
          </section>
          <h1 className="titulo">En cartelera</h1>
-         <section class="listadoPeliculas"> {
+         <section className="listadoPeliculas"> {
             this.state.cartelMovies.map ((cartelMovie, idx) => <Billboard key={cartelMovie + idx} datosPelicula={cartelMovie}/>)
          }
          </section>

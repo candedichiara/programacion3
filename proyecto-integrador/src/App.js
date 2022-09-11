@@ -6,8 +6,7 @@ import Home from './screens/Home/Home'
 import Favoritos from './screens/Favoritos/Favoritos'
 import NotFound from './screens/NotFound/NotFound'
 //import MovieDetail from './components/MovieDetail/MovieDetail';
-import VerTodas from './components/VerTodas/VerTodas';
-
+import VerTodas from './screens/VerTodas/VerTodas';
 
 function App() {
   return (

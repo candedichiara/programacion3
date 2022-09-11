@@ -5,18 +5,19 @@ class PeliculaPopulares extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        verMas: 'hide',
+        verMas: false,
         favorito: false
     };
   }
+  
   verMas() {
-    if (this.state.verMas === 'show'){
+    if (this.state.verMas){
      this.setState ({
-         verMas: 'hide'
+         verMas: false
      })
     } else {
          this.setState ({
-             verMas: 'show'
+             verMas: true
          })
     }
    }
@@ -77,20 +78,31 @@ class PeliculaPopulares extends Component {
         <img src={"https://image.tmdb.org/t/p/original/" + this.props.datosPelicula.poster_path}alt="{this.props.datosPelicula.title}" className="imagenesPelis"/>
         <h2 class="tituloPelicula">{this.props.datosPelicula.title} </h2>
         <h3 class="tituloPelicula">({this.props.datosPelicula.release_date})</h3>
+
         {
-        this.state.verMas 
-        ? <p>{this.props.datosPelicula.overview}</p> 
-        : <p>{this.props.datosPelicula.overview} [...]</p>
+        this.state.verMas ? 
+          <p>{this.props.datosPelicula.overview}</p> 
+        : 
+        ""
         }
 
-            {
-              this.state.favorito
-              ?
-                <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) }>Sacar de favoritos</button>
+        {
+         this.state.favorito ?
+            <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) }>Sacar de favoritos</button>
               :
-                <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) }>Añadir a favoritos</button>
-            }
-         <button onClick={()=>this.verMas()}>Ver más</button>
+            <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) }>Añadir a favoritos</button>
+        }
+
+        {
+          this.state.verMas ?
+
+          <button onClick={()=>this.verMas()}>Ver menos</button>
+
+          :
+
+          <button onClick={()=>this.verMas()}>Ver más</button>
+        }
+         
       </article>
     );
   }
