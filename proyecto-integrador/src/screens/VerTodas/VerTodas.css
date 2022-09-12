@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+.listadoPelicula{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.tituloPelicula {
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-left: 0%;
+}

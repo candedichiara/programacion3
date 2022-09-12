@@ -24,13 +24,14 @@ class VerTodasCard extends Component {
     render () {
         return (
             <>
-            <article>
+            <article className='listadoPelicula'>
                 
                 <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt=""/>
-                <h2>{this.props.datosPelicula.title}</h2>
+                <h2 className='tituloPelicula'>{this.props.datosPelicula.title}</h2>
+                <p>Fecha de estreno: {this.props.datosPelicula.release_date}</p>
                 {
                     this.state.verMas ?
-                    <section>
+                    <section >
                     <p>{this.props.datosPelicula.overview}</p>
                    <p onClick={() => this.verMas()}>Ver menos</p>
                    </section>
