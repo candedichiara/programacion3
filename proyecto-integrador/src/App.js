@@ -9,6 +9,7 @@ import NotFound from './screens/NotFound/NotFound'
 //import MovieDetail from './components/MovieDetail/MovieDetail';
 
 
+
 function App() {
   return (
 <React.Fragment>

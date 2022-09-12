@@ -3,6 +3,7 @@ import PeliculaPopulares from '../../components/PeliculaPopulares/PeliculaPopula
 import Billboard from '../../components/Billboard/Billboard'
 import "./Home.css"
 import {Link} from 'react-router-dom'
+import Search from '../../components/Search/Search'
 
 class Home extends Component{
    constructor(props){
@@ -10,7 +11,8 @@ class Home extends Component{
       this.state = {
          key:'d3bf40c9b6ae8b0603c799bd0fc81e36',
          popularMovies:[], //aparecer personajes
-         cartelMovies: []
+         cartelMovies: [],
+         backupPopulares: []
       
       }
    }
@@ -20,7 +22,8 @@ componentDidMount(){
    fetch ('https://api.themoviedb.org/3/movie/popular?api_key=' + this.state.key)
    .then (res => res.json())
    .then (data => this.setState ({
-      popularMovies: data.results
+      popularMovies: data.results,
+      backupPopulares: data.results,
    }, () => console.log(this.state.popularMovies)
    ))
    .catch (err => console.log (err))
@@ -33,11 +36,18 @@ componentDidMount(){
    .catch(err => console.log (err))
 }
 
+metodoFiltrar(name){
+   let arrayFiltrado = this.state.backupPopulares.filter((elm) => elm.title.toLowerCase().includes(name.toLowerCase()) )
+   this.setState({
+      popularMovies: arrayFiltrado
+   })
+}
 
    
 render(){
    return (
       < >
+      <Search filtrar={(name) => this.metodoFiltrar(name) } />
          <h1 className="titulo">Peliculas Más Populares </h1>
          <section className="listadoPeliculas"> {this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>)
       }
