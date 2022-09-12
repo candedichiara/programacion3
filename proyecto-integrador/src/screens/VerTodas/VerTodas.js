@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import VerTodasCard from './VerTodasCard'
-import './VerTodas.css'
+import VerTodasCard from '../../components/VerTodasCard/VerTodasCard'
+
 
 class VerTodas extends Component {
     constructor(props) {

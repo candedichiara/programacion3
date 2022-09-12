@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import FavoritosCard from '../../components/FavoritosCard/FavoritosCard'
 
 class Favoritos extends Component{
     constructor(props){
@@ -18,6 +19,7 @@ class Favoritos extends Component{
                         fetch(`https://api.themoviedb.org/3/movie/${elm}?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36`)
                         .then(resp => resp.json())
                         .then(data => data))
+                    
                 })
             )
             .then(data => 
@@ -30,9 +32,13 @@ class Favoritos extends Component{
 
     render(){
         return(
-            <h1>
-                Tus peliculas favoritas
-            </h1>
+            <div>
+                {
+                    this.state.peliculas.length > 0 ?
+                    this.state.peliculas.map((elm, idx) => <FavoritosCard key={idx + elm} datosPelicula={elm}/>)
+                    : 'Cargando..'
+                }
+            </div>
         )
     }
 }
