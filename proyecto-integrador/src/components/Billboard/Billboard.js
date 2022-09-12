@@ -5,19 +5,19 @@ class Billboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        verMas: 'hide',
+        verMas: false,
         favorito: false
     };
     
   }
   verMas () {
-    if (this.state.verMas === 'show') {
+    if (this.state.verMas) {
         this.setState ({
-            verMas: 'hide'
+            verMas: false
         })
     } else {
         this.setState ({
-            verMas: 'show'
+            verMas: true
         })
     }
   }
@@ -83,7 +83,7 @@ class Billboard extends Component {
         {
         this.state.verMas 
         ? <p>{this.props.datosPelicula.overview}</p> 
-        : <p>{this.props.datosPelicula.overview} [...]</p>
+        : ""
         }
 
             {
@@ -93,8 +93,17 @@ class Billboard extends Component {
               :
                 <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) }>Añadir a favoritos</button>
             }
+            {
+             this.state.verMas ?
 
-       <button onClick={()=>this.verMas()}>Ver más</button>
+             <button onClick={()=>this.verMas()}>Ver menos</button>
+   
+             :
+   
+             <button onClick={()=>this.verMas()}>Ver más</button> 
+            }
+
+      
       </article>
     );
   }

@@ -12,7 +12,8 @@ class Home extends Component{
          key:'d3bf40c9b6ae8b0603c799bd0fc81e36',
          popularMovies:[], //aparecer personajes
          cartelMovies: [],
-         backupPopulares: []
+         backupPopulares: [],
+        
       
       }
    }

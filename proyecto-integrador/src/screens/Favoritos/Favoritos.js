@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import FavoritosCard from '../../components/FavoritosCard/FavoritosCard'
 
+
 class Favoritos extends Component{
     constructor(props){
         super(props)

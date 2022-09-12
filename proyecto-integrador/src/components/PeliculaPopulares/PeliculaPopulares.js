@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom'
 import "./PeliculaPopulares.css"
 
 class PeliculaPopulares extends Component {
@@ -76,8 +77,9 @@ class PeliculaPopulares extends Component {
     return (
       <article className="peliculaCard">
         <img src={"https://image.tmdb.org/t/p/original/" + this.props.datosPelicula.poster_path}alt="{this.props.datosPelicula.title}" className="imagenesPelis"/>
-        <h2 class="tituloPelicula">{this.props.datosPelicula.title} </h2>
-        <h3 class="tituloPelicula">({this.props.datosPelicula.release_date})</h3>
+        <h2 className="tituloPelicula" >{this.props.datosPelicula.title} </h2>
+        
+        <h3 className="tituloPelicula">({this.props.datosPelicula.release_date})</h3>
 
         {
         this.state.verMas ? 
@@ -103,6 +105,7 @@ class PeliculaPopulares extends Component {
           <button onClick={()=>this.verMas()}>Ver más</button>
         }
          
+         <Link to={`/detalle/${this.props.datosPelicula.id}`}>Ver detalle</Link>
       </article>
     );
   }

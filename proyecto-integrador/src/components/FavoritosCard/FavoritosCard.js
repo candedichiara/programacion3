@@ -1,20 +1,21 @@
 import React, {Component} from 'react'
+import './Favoritos.css'
 
 class FavoritosCard extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            verMas: 'hide'
+            verMas: false
         };
     }
     verMas () {
-        if (this.state.verMas === 'show') {
+        if (this.state.verMas) {
             this.setState ({
-                verMas: 'hide'
+                verMas: false
             })
         } else {
             this.setState ({
-                verMas: 'show'
+                verMas: true
             })
         }
       } 
@@ -22,19 +23,31 @@ class FavoritosCard extends Component {
     render () {
         return (
             <>
-            <article className='listadoPelicula'>
+            <article className='favoritoCard'>
                 
-                <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt=""/>
-                <h2 className='tituloPelicula'>{this.props.datosPelicula.title}</h2>
-                <p>Fecha de estreno: {this.props.datosPelicula.release_date}</p>
+                <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt="" className='portadaPelis'/>
+                <h2 className='titulo'>{this.props.datosPelicula.title}</h2>
+                <p className='estreno'>Fecha de estreno: {this.props.datosPelicula.release_date}</p>
+                
+
+                {
+                    this.state.verMas ? 
+                    <p>{this.props.datosPelicula.overview}</p> 
+                    : 
+                    ""
+                }
+                
+                
+                
                 {
                     this.state.verMas ?
                     <section >
-                    <p>{this.props.datosPelicula.overview}</p>
-                   <p onClick={() => this.verMas()}>Ver menos</p>
+                    
+                   <button onClick={() => this.verMas()}>Ver menos</button>
                    </section>
                    :
-                   <p onClick={()=> this.verMas}>Ver más</p>
+                   <button onClick={()=> this.verMas()}>Ver más</button>
+                   
                 }
                
             </article>
