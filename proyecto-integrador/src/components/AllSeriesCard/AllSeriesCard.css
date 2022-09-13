@@ -1,15 +1,12 @@
-body {
-    background-color: rgb(1, 6, 28);
-}
-.listadoPeliculas{
+.listadoSerie {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.titulo {
+
+.tituloSerie{
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     margin-left: 0%;
 }
-

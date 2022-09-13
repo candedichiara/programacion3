@@ -16,7 +16,11 @@ function Header() {
           </li>
 
           <li className="opciones">
-            <Link to='/todas'>Ver todas</Link>
+            <Link to='/todasPeliculas'>Peliculas</Link>
+          </li>
+
+          <li className="opciones">
+            <Link to='/todasSeries'>Series</Link>
           </li>
 
         </ul>

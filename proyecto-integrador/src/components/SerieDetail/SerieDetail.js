@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './MovieDetail.css';
+import './SerieDetail.css';
 
-class MovieDetail extends Component {
+class SerieDetail extends Component {
 
     constructor(props){
         super(props)
@@ -15,7 +15,7 @@ class MovieDetail extends Component {
 
     componentDidMount(){
 
-      fetch (`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36`)
+      fetch (`https://api.themoviedb.org/3/tv/${this.state.id}?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36`)
       .then (res => res.json())
       .then (data => this.setState({
         datos: data
@@ -33,24 +33,23 @@ class MovieDetail extends Component {
     return (
         <>
         
-            <h1>Detalle de película</h1>
+            <h1 className=''>Detalle de la serie</h1>
            
                 <section>
-                    <article>
-                        <h2>{this.state.datos.title}</h2>
-                    </article>
 
                     <article>
 
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.datos.poster_path}`} alt={this.state.datos.title}/>
+                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.datos.poster_path}`} alt={this.state.datos.name}/>
                     </article>
-                    <article>                     
+                    <article>    
+
+                        <h2>{this.state.datos.name}</h2>                 
 
                         <p>Rating:{this.state.datos.popularity} </p>
 
-                        <p>Fecha de estreno:{this.state.datos.release_date} </p>
+                        <p>Fecha de estreno:{this.state.datos.first_air_date} </p>
 
-                        <p>Duración: {this.state.datos.runtime}</p>
+                        <p>Temporadas: {this.state.datos.number_of_seasons}</p>
 
                         <p>{this.state.datos.overview}</p>
 
@@ -70,4 +69,4 @@ class MovieDetail extends Component {
 }
 
 
-export default MovieDetail
+export default SerieDetail

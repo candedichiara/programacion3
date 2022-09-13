@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
-import './VerTodas.css'
+import './AllMoviesCard.css'
 //import {Link} from 'react-router-dom'
 
-class VerTodasCard extends Component {
+class AllMovies extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            verMas: 'hide',
+            verMas: false
            /* limit: 10,
             index: 0
             limit: 10,
@@ -17,13 +17,13 @@ class VerTodasCard extends Component {
         };
     }
     verMas () {
-        if (this.state.verMas === 'show') {
+        if (this.state.verMas) {
             this.setState ({
-                verMas: 'hide'
+                verMas: false
             })
         } else {
             this.setState ({
-                verMas: 'show'
+                verMas: true
             })
         }
       } 
@@ -40,10 +40,10 @@ class VerTodasCard extends Component {
                     this.state.verMas ?
                     <section >
                     <p>{this.props.datosPelicula.overview}</p>
-                   <p onClick={() => this.verMas()}>Ver menos</p>
+                   <button onClick={() => this.verMas()}>Ver menos</button>
                    </section>
                    :
-                   <p onClick={()=> this.verMas}>Ver más</p>
+                   <button onClick={()=> this.verMas}>Ver más</button>
                 }
                
             </article>
@@ -52,4 +52,4 @@ class VerTodasCard extends Component {
     }
 }
 
-export default VerTodasCard; 
+export default AllMovies;

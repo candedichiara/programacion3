@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PeliculaPopulares from '../../components/PeliculaPopulares/PeliculaPopulares'
-import Billboard from '../../components/Billboard/Billboard'
+import Series from '../../components/Series/Series'
 import "./Home.css"
 import {Link} from 'react-router-dom'
 import Search from '../../components/Search/Search'
@@ -9,10 +9,11 @@ class Home extends Component{
    constructor(props){
       super(props)
       this.state = {
-         key:'d3bf40c9b6ae8b0603c799bd0fc81e36',
+         //key:'d3bf40c9b6ae8b0603c799bd0fc81e36',
          popularMovies:[], //aparecer personajes
-         cartelMovies: [],
+         popularSeries: [],
          backupPopulares: [],
+         
         
       
       }
@@ -20,7 +21,7 @@ class Home extends Component{
 
 componentDidMount(){
    
-   fetch ('https://api.themoviedb.org/3/movie/popular?api_key=' + this.state.key)
+   fetch ('https://api.themoviedb.org/3/movie/popular?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&limit=10')
    .then (res => res.json())
    .then (data => this.setState ({
       popularMovies: data.results,
@@ -29,10 +30,10 @@ componentDidMount(){
    ))
    .catch (err => console.log (err))
 
-   fetch ('https://api.themoviedb.org/3/movie/now_playing?api_key=' + this.state.key)
+   fetch ('https://api.themoviedb.org/3/tv/popular?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&limit=10')
    .then (res => res.json())
    .then (data => this.setState({
-      cartelMovies: data.results
+      popularSeries: data.results
    }))
    .catch(err => console.log (err))
 }
@@ -50,17 +51,28 @@ render(){
       < >
       <Search filtrar={(name) => this.metodoFiltrar(name) } />
          <h1 className="titulo">Peliculas Más Populares </h1>
-         <section className="listadoPeliculas"> {this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>)
+
+         <section className="listadoPeliculas"> 
+         {
+            this.state.popularMovies.length > 0?
+         this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>):
+         'Cargando'
       }
 
       <div>
-         <Link className="" to='/todas' > Ver todas </Link>
+         <Link className="" to='/todasPeliculas' > Ver todas </Link>
       </div>
          </section>
-         <h1 className="titulo">En cartelera</h1>
+         
+         <h1 className="titulo">Series Más Populares</h1>
          <section className="listadoPeliculas"> {
-            this.state.cartelMovies.map ((cartelMovie, idx) => <Billboard key={cartelMovie + idx} datosPelicula={cartelMovie}/>)
+            this.state.popularSeries.length > 0 ?
+            this.state.popularSeries.map ((serie, idx) => <Series key={serie + idx} datosPelicula={serie}/>):
+            'Cargando'
          }
+         <div>
+         <Link className="" to='/todasSeries' > Ver todas </Link>
+      </div>
          </section>
       </>
 

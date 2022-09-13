@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./Billboard.css" 
+import {Link} from 'react-router-dom';
+import "./Series.css" 
 
-class Billboard extends Component {
+class Series extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -77,9 +78,12 @@ class Billboard extends Component {
   render() {
     return (
       <article className="peliculaCard">
-        <img src={"https://image.tmdb.org/t/p/original/" + this.props.datosPelicula.poster_path}alt="{this.props.datosPelicula.title}" className="imagenesPelis"/>
-        <h2 class="tituloPelicula">{this.props.datosPelicula.title}</h2>
-        <h3 class="tituloPelicula">({this.props.datosPelicula.release_date})</h3>
+        <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPelicula.poster_path}`}alt="Cartel serie" className="imagenesPelis"/>
+        <h2 class="tituloPelicula">{this.props.datosPelicula.name}</h2>        
+        <p>Fecha de emisión: {this.props.datosPelicula.first_air_date}</p> 
+
+
+
         {
         this.state.verMas 
         ? <p>{this.props.datosPelicula.overview}</p> 
@@ -102,6 +106,8 @@ class Billboard extends Component {
    
              <button onClick={()=>this.verMas()}>Ver más</button> 
             }
+            <Link to={`/detalleSerie/${this.props.datosPelicula.id}`}>Ver detalle</Link>
+            
 
       
       </article>
@@ -109,4 +115,4 @@ class Billboard extends Component {
   }
 }
 
-export default Billboard;
+export default Series;

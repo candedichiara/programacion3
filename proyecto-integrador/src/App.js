@@ -3,9 +3,11 @@ import {Route, Switch} from 'react-router-dom'
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from './screens/Home/Home'
-import VerTodas from './screens/VerTodas/VerTodas';
+import AllMovies from './screens/AllMovies/AllMovies';
+import AllSeries from './screens/AllSeries/AllSeries'
 import Favoritos from './screens/Favoritos/Favoritos'
 import MovieDetail from './components/MovieDetail/MovieDetail';
+import SerieDetail from './components/SerieDetail/SerieDetail';
 import NotFound from './screens/NotFound/NotFound'
 
 
@@ -18,9 +20,11 @@ function App() {
       <Header />
       <Switch>
         <Route path='/' exact={true} component={Home} />
-        <Route path='/todas' component ={VerTodas} />
+        <Route path='/todasPeliculas' component ={AllMovies} />
+        <Route path='/todasSeries' component={AllSeries} />
         <Route path='/favoritos' component={Favoritos} />
         <Route path='/detalle/:id' component = {MovieDetail} />
+        <Route path='/detalleSerie/:id' component= {SerieDetail} />
         <Route path='' component={NotFound} />
         
       </Switch>
