@@ -60,7 +60,7 @@ render(){
       }
 
       <div>
-         <Link className="" to='/todasPeliculas' > Ver todas </Link>
+         <Link className="verTodas" to='/todasPeliculas' > Ver todas </Link>
       </div>
          </section>
          
@@ -71,7 +71,7 @@ render(){
             'Cargando'
          }
          <div>
-         <Link className="" to='/todasSeries' > Ver todas </Link>
+         <Link className="verTodas" to='/todasSeries' > Ver todas </Link>
       </div>
          </section>
       </>

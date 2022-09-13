@@ -106,7 +106,7 @@ class Series extends Component {
    
              <button onClick={()=>this.verMas()}>Ver más</button> 
             }
-            <Link to={`/detalleSerie/${this.props.datosPelicula.id}`}>Ver detalle</Link>
+            <button><Link to={`/detalleSerie/${this.props.datosPelicula.id}`}>Ver detalle</Link></button> 
             
 
       

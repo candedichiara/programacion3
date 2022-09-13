@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import AllSeriesCard from '../../components/AllSeriesCard/AllSeriesCard'
+import './AllSeries.css'
 
 
 class AllSeries extends Component {
@@ -36,7 +37,7 @@ class AllSeries extends Component {
   render () {
     return (
         <>
-        <section>
+        <section className='listadoSeries'>
             {
                 this.state.series.map((serie, idx) => <AllSeriesCard key={serie + idx} datosPelicula={serie} />)
             }

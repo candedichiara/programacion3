@@ -31,10 +31,10 @@ class AllMovies extends Component {
     render () {
         return (
             <>
-            <article className='listadoPelicula'>
+            <article className='peliculasCard'>
                 
-                <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt=""/>
-                <h2 className='tituloPelicula'>{this.props.datosPelicula.title}</h2>
+                <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt="" className='imagenesPeliculas'/>
+                <h2 className='tituloPeliculas'>{this.props.datosPelicula.title}</h2>
                 <p>Fecha de estreno: {this.props.datosPelicula.release_date}</p>
                 {
                     this.state.verMas ?

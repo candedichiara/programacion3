@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import FavoritosCard from '../../components/FavoritosCard/FavoritosCard'
+import './Favoritos.css'
 
 
 class Favoritos extends Component{
@@ -33,7 +34,7 @@ class Favoritos extends Component{
 
     render(){
         return(
-            <div>
+            <div className='listadoFavoritos'>
                 {
                     this.state.peliculas.length > 0 ?
                     this.state.peliculas.map((elm, idx) => <FavoritosCard key={idx + elm} datosPelicula={elm}/>)

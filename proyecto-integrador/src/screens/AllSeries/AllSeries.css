@@ -1,0 +1,8 @@
+body {
+    background-color: rgb(1, 6, 28);
+}
+.listadoSeries{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

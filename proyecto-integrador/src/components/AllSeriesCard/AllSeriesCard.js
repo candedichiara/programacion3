@@ -24,9 +24,9 @@ class AllSeries extends Component {
     render () {
         return (
             <>
-            <article className='listadoSerie'>
+            <article className='seriesCard'>
                 
-                <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt=""/>
+                <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt="" className='imagenesSerie'/>
                 <h2 className='tituloSerie'>{this.props.datosPelicula.name}</h2>
                 <p>Temporadas: {this.props.datosPelicula.number_of_seasons}</p>
                 {

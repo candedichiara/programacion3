@@ -98,14 +98,14 @@ class PeliculaPopulares extends Component {
         {
           this.state.verMas ?
 
-          <button onClick={()=>this.verMas()}>Ver menos</button>
+          <button onClick={()=>this.verMas()} className="botonVer">Ver menos</button>
 
           :
 
-          <button onClick={()=>this.verMas()}>Ver más</button>
+          <button onClick={()=>this.verMas()} className="botonVer">Ver más</button>
         }
          
-         <Link to={`/detalle/${this.props.datosPelicula.id}`}>Ver detalle</Link>
+         <button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`}>Ver detalle</Link></button>
       </article>
     );
   }
