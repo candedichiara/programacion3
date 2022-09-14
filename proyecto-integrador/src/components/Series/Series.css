@@ -1,5 +1,8 @@
-.peliculaCard{
-
+*{
+  box-sizing: border-box;
+}
+.serieCard{
+  width: 17%;
   margin:0 1rem 2rem;
   padding:1rem;
   border-radius: 10px;
@@ -7,16 +10,23 @@
   max-width:20rem;
   display:flex;
   flex-direction: column;
-  align-items: center;
+  background-color: rgb(1, 6, 28);
+  border-style: double;
+  border-color: white;
+  border-width: 0,5rem;
+  
   }
 
-  .imagenesPelis{
-      width: 50%;
+  .imagenesSeries{
+      width: 65%;
+      margin-left: 0.85cm;
+
   }
-  .tituloPelicula {
-    width: 100%;
+  .tituloSerie {
     font-size: medium;
+    width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     margin-left: 0%;
+    color: white;
     }

@@ -14,14 +14,14 @@ function Header() {
           <li className="opciones">
             <Link to='/favoritos'>Favoritos</Link>
           </li>
-
           <li className="opciones">
-            <Link to='/todasPeliculas'>Peliculas</Link>
+           <Link to='/todasPeliculas'>Peliculas</Link>
+          </li>
+          <li className="opciones">
+           <Link to='/todasSeries'>Series</Link>
           </li>
 
-          <li className="opciones">
-            <Link to='/todasSeries'>Series</Link>
-          </li>
+         
 
         </ul>
 

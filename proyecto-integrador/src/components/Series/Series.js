@@ -77,10 +77,10 @@ class Series extends Component {
 
   render() {
     return (
-      <article className="peliculaCard">
-        <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPelicula.poster_path}`}alt="Cartel serie" className="imagenesPelis"/>
-        <h2 class="tituloPelicula">{this.props.datosPelicula.name}</h2>        
-        <p>Fecha de emisión: {this.props.datosPelicula.first_air_date}</p> 
+      <article className="serieCard">
+        <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPelicula.poster_path}`}alt="Cartel serie" className="imagenesSeries"/>
+        <h2 class="tituloSerie">{this.props.datosPelicula.name}</h2>        
+        <p className="tituloSerie">Fecha de emisión: {this.props.datosPelicula.first_air_date}</p> 
 
 
 

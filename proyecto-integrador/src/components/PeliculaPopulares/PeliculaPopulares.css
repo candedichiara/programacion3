@@ -12,16 +12,17 @@
     max-width:20rem;
     display:flex;
     flex-direction: column;
-    background-color: white;
+    background-color: rgb(1, 6, 28);
     border-style: double;
-    border-color: rgb(0, 0, 0);
+    border-color: white;
     border-width: 0,5rem;
     /*Los 3 ultimos no los toma*/
 
     }
 
     .imagenesPelis{
-        width: 50%;
+        width: 65%;
+        margin-left: 0.85cm;
     }
     .tituloPelicula {
     font-size: medium;
@@ -29,5 +30,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     margin-left: 0%;
+    color: white;
     
     }

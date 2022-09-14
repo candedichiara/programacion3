@@ -35,16 +35,21 @@ class AllMovies extends Component {
                 
                 <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt="" className='imagenesPeliculas'/>
                 <h2 className='tituloPeliculas'>{this.props.datosPelicula.title}</h2>
-                <p>Fecha de estreno: {this.props.datosPelicula.release_date}</p>
+                <p className='infoPeliculas'>Fecha de estreno: {this.props.datosPelicula.release_date}</p>
                 {
-                    this.state.verMas ?
-                    <section >
-                    <p>{this.props.datosPelicula.overview}</p>
-                   <button onClick={() => this.verMas()}>Ver menos</button>
-                   </section>
-                   :
-                   <button onClick={()=> this.verMas}>Ver más</button>
-                }
+                this.state.verMas ?
+                <p className='infoPeliculas'>{this.props.datosPelicula.overview}</p>
+                :""
+               }
+                {
+             this.state.verMas ?
+
+             <button onClick={()=>this.verMas()}>Ver menos</button>
+   
+             :
+   
+             <button onClick={()=>this.verMas()}>Ver más</button> 
+            }
                
             </article>
             </>

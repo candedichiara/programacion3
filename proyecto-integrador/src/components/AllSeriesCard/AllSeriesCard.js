@@ -28,16 +28,21 @@ class AllSeries extends Component {
                 
                 <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt="" className='imagenesSerie'/>
                 <h2 className='tituloSerie'>{this.props.datosPelicula.name}</h2>
-                <p>Temporadas: {this.props.datosPelicula.number_of_seasons}</p>
+                <p className='infoSerie'>Idioma original: {this.props.datosPelicula.original_language}</p>
+               {
+                this.state.verMas ?
+                <p className='infoSerie'>{this.props.datosPelicula.overview}</p>
+                :""
+               }
                 {
-                    this.state.verMas ?
-                    <section >
-                    <p>{this.props.datosPelicula.overview}</p>
-                   <button onClick={() => this.verMas()}>Ver menos</button>
-                   </section>
-                   :
-                   <button onClick={()=> this.verMas}>Ver más</button>
-                }
+             this.state.verMas ?
+
+             <button onClick={()=>this.verMas()}>Ver menos</button>
+   
+             :
+   
+             <button onClick={()=>this.verMas()}>Ver más</button> 
+            }
                
             </article>
             </>

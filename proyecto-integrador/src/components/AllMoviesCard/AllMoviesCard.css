@@ -4,20 +4,22 @@
 .peliculasCard {
     width: 17%;
     margin:0 1rem 2rem;
+    margin-top: 5%;
     padding:1rem;
     border-radius: 10px;
     box-shadow: 0 10px 10px rgba(109, 109, 109, 0.3);
     max-width:20rem;
     display:flex;
     flex-direction: column;
-    background-color: white;
+    background-color: rgb(1, 6, 28);
     border-style: double;
-    border-color: rgb(0, 0, 0);
+    border-color: white;
     border-width: 0,5rem;
     /*Los 3 ultimos no los toma*/
 }
 .imagenesPeliculas {
-    width: 50%;
+    width: 65%;
+    margin-left: 0.85cm;
 }
 .tituloPeliculas{
     font-size: medium;
@@ -25,4 +27,13 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     margin-left: 0%;
+    color: white;
+}
+.infoPeliculas {
+    font-size: medium;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-left: 0%;
+    color: white;
 }

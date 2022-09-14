@@ -1,0 +1,22 @@
+.titulo-serie {
+    font-size: 50px;
+    text-align: justify;
+    padding: 4px;
+    color: white;
+    border: 0;
+    
+}
+.detalleSerie {
+    text-decoration: none;
+    color: white; 
+}
+.detalles .portadaSerie {
+    width: 30vw;
+    height: 70vh;
+    margin: 10px 10px 10px 40px;   
+    border-radius: 10px; 
+    padding: 0;  
+}
+.portadaSerie {
+    margin-left: 50%;
+}

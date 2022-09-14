@@ -33,28 +33,28 @@ class MovieDetail extends Component {
     return (
         <>
         
-            <h1>Detalle de película</h1>
+            <h1 className='tituloDetalle'>Detalle de película</h1>
            
-                <section>
-                    <article>
-                        <h2>{this.state.datos.title}</h2>
+                <section className='detalles'>
+                    <article className='portadaPelicula'>
+                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.datos.poster_path}`} alt={this.state.datos.title} />
                     </article>
 
                     <article>
-
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.datos.poster_path}`} alt={this.state.datos.title}/>
+                    <h2 className='titulo-pelicula'>{this.state.datos.title}</h2>
                     </article>
-                    <article>                     
+                    
+                    <article className='info'>                                           
 
-                        <p>Rating:{this.state.datos.popularity} </p>
+                        <p className='detallePelicula'>Rating:{this.state.datos.popularity} </p>
 
-                        <p>Fecha de estreno:{this.state.datos.release_date} </p>
+                        <p className='detallePelicula'>Fecha de estreno:{this.state.datos.release_date} </p>
 
-                        <p>Duración: {this.state.datos.runtime}</p>
+                        <p className='detallePelicula'>Duración: {this.state.datos.runtime}</p>
 
-                        <p>{this.state.datos.overview}</p>
+                        <p className='detallePelicula'>{this.state.datos.overview}</p>
 
-                        <ul>
+                        <ul className='detallePelicula'>
                             Géneros: 
                             { 
                               this.state.datos.genres.map((genero, idx) => <li key={genero.id + idx}>{genero.name}</li>)  

@@ -33,27 +33,29 @@ class SerieDetail extends Component {
     return (
         <>
         
-            <h1 className=''>Detalle de la serie</h1>
+            <h1 className='tituloDetalle'>Detalle de la serie</h1>
            
-                <section>
+                <section className='detalles'>
+
+                    <article className='portadaSerie'>
+                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.datos.poster_path}`} alt={this.state.datos.name} className='portadaSerie'/>
+                    </article>
 
                     <article>
-
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.datos.poster_path}`} alt={this.state.datos.name}/>
+                    <h2 className='titulo-serie'>{this.state.datos.name}</h2>
                     </article>
-                    <article>    
 
-                        <h2>{this.state.datos.name}</h2>                 
+                    <article className='info'>                                         
 
-                        <p>Rating:{this.state.datos.popularity} </p>
+                        <p className='detalleSerie'>Rating:{this.state.datos.popularity} </p>
 
-                        <p>Fecha de estreno:{this.state.datos.first_air_date} </p>
+                        <p className='detalleSerie'>Fecha de estreno:{this.state.datos.first_air_date} </p>
 
-                        <p>Temporadas: {this.state.datos.number_of_seasons}</p>
+                        <p className='detalleSerie'>Temporadas: {this.state.datos.number_of_seasons}</p>
 
-                        <p>{this.state.datos.overview}</p>
+                        <p className='detalleSerie'>{this.state.datos.overview}</p>
 
-                        <ul>
+                        <ul className='detalleSerie'>
                             Géneros: 
                             { 
                               this.state.datos.genres.map((genero, idx) => <li key={genero.id + idx}>{genero.name}</li>)  

@@ -12,16 +12,14 @@ class Home extends Component{
          //key:'d3bf40c9b6ae8b0603c799bd0fc81e36',
          popularMovies:[], //aparecer personajes
          popularSeries: [],
-         backupPopulares: [],
-         
-        
+         backupPopulares: [],        
       
       }
    }
 
 componentDidMount(){
    
-   fetch ('https://api.themoviedb.org/3/movie/popular?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&limit=10')
+   fetch ('https://api.themoviedb.org/3/movie/popular?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&maximum=10')
    .then (res => res.json())
    .then (data => this.setState ({
       popularMovies: data.results,
@@ -50,7 +48,7 @@ render(){
    return (
       < >
       <Search filtrar={(name) => this.metodoFiltrar(name) } />
-         <h1 className="titulo">Peliculas Más Populares </h1>
+         <h1 className="tituloHome">Peliculas Más Populares </h1>
 
          <section className="listadoPeliculas"> 
          {
@@ -64,7 +62,7 @@ render(){
       </div>
          </section>
          
-         <h1 className="titulo">Series Más Populares</h1>
+         <h1 className="tituloHome">Series Más Populares</h1>
          <section className="listadoPeliculas"> {
             this.state.popularSeries.length > 0 ?
             this.state.popularSeries.map ((serie, idx) => <Series key={serie + idx} datosPelicula={serie}/>):
