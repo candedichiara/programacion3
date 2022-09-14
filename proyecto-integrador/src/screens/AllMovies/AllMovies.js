@@ -8,7 +8,7 @@ class AllMovies extends Component {
         this.state = {
             peliculas: [],
             limite: 16,
-            index:0,
+            index: 0
         }
     }
 
@@ -23,11 +23,12 @@ class AllMovies extends Component {
     }
 
   mostrarMas() {
-    fetch (`https://api.themoviedb.org/3/movie/popular?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&index=${this.state.index}&limit=${this.state.limite}`)
+    fetch (`https://api.themoviedb.org/3/movie/now_playing?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&index=${this.state.index}&limit=${this.state.index.limite}`)
     .then (res => res.json())
     .then (data => this.setState ({
         peliculas: this.state.peliculas.concat (data.results),
         index: this.state.index + this.state.limite
+        
         
     }))
     .catch (err => console.log(err))
