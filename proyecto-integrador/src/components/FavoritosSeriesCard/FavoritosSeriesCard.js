@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
-import './Favoritos.css'
+import './FavoritosSeries.css'
 
-class FavoritosCard extends Component {
+class FavoritosSeriesCard extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            verMas: false
+            verMas: false,
+            favorito:true
         };
     }
     verMas () {
@@ -18,7 +19,7 @@ class FavoritosCard extends Component {
                 verMas: true
             })
         }
-      } 
+      }
 
     render () {
         return (
@@ -29,15 +30,12 @@ class FavoritosCard extends Component {
                 <h2 className='titulo'>{this.props.datosPelicula.title}</h2>
                 <p className='estreno'>Fecha de estreno: {this.props.datosPelicula.release_date}</p>
                 
-
                 {
                     this.state.verMas ? 
                     <p>{this.props.datosPelicula.overview}</p> 
                     : 
                     ""
                 }
-                
-                
                 
                 {
                     this.state.verMas ?
@@ -49,6 +47,7 @@ class FavoritosCard extends Component {
                    <button onClick={()=> this.verMas()}>Ver más</button>
                    
                 }
+
                
             </article>
             </>
@@ -56,4 +55,4 @@ class FavoritosCard extends Component {
     }
 }
 
-export default FavoritosCard;
+export default FavoritosSeriesCard;
