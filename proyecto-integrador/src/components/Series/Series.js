@@ -86,27 +86,27 @@ class Series extends Component {
 
         {
         this.state.verMas 
-        ? <p>{this.props.datosPelicula.overview}</p> 
+        ? <p className="overview">{this.props.datosPelicula.overview}</p> 
         : ""
         }
 
             {
               this.state.favorito
               ?
-                <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) }>Sacar de favoritos</button>
+                <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) } className='favbtn'>Sacar de favoritos</button>
               :
-                <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) }>Añadir a favoritos</button>
+                <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) } className='favbtn'>Añadir a favoritos</button>
             }
             {
              this.state.verMas ?
 
-             <button onClick={()=>this.verMas()}>Ver menos</button>
+             <button onClick={()=>this.verMas()} className="botonVer">Ver menos</button>
    
              :
    
-             <button onClick={()=>this.verMas()}>Ver más</button> 
+             <button onClick={()=>this.verMas()} className="botonVer">Ver más</button> 
             }
-            <button><Link to={`/detalleSerie/${this.props.datosPelicula.id}`}>Ver detalle</Link></button> 
+            <button><Link to={`/detalleSerie/${this.props.datosPelicula.id}`} className='detallebtn'>Ver detalle</Link></button> 
             
 
       

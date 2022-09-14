@@ -2,31 +2,27 @@
   box-sizing: border-box;
 }
 .serieCard{
-  width: 17%;
-  margin:0 1rem 2rem;
-  padding:1rem;
-  border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(109, 109, 109, 0.3);
-  max-width:20rem;
-  display:flex;
-  flex-direction: column;
-  background-color: rgb(1, 6, 28);
-  border-style: double;
-  border-color: white;
-  border-width: 0,5rem;
+    background-color: rgb(1, 6, 28);
+    margin-bottom: 20px;
+    width: 24%;
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgb(1, 6, 28);
   
   }
 
   .imagenesSeries{
-      width: 65%;
-      margin-left: 0.85cm;
+      width: 80%;
+      margin-left: 20px;
 
   }
   .tituloSerie {
-    font-size: medium;
+    font-size: 20px;
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     margin-left: 0%;
     color: white;
+    }
+    .overview {
+      color: white;
     }
