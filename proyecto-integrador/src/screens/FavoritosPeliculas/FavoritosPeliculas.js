@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import FavoritosCard from '../../components/FavoritosCard/FavoritosCard'
-import './Favoritos.css'
+import FavoritosPelisCard from '../../components/FavoritosPelisCard/FavoritosPelisCard'
+import './FavoritosPeliculas.css'
 
 
-class Favoritos extends Component{
+class FavoritosPeliculas extends Component{
     constructor(props){
         super(props)
         this.state={
@@ -37,7 +37,7 @@ class Favoritos extends Component{
             <div className='listadoFavoritos'>
                 {
                     this.state.peliculas.length > 0 ?
-                    this.state.peliculas.map((elm, idx) => <FavoritosCard key={idx + elm} datosPelicula={elm}/>)
+                    this.state.peliculas.map((elm, idx) => <FavoritosPelisCard key={idx + elm} datosPelicula={elm}/>)
                     : 'Cargando..'
                 }
             </div>
@@ -45,4 +45,4 @@ class Favoritos extends Component{
     }
 }
 
-export default Favoritos
+export default FavoritosPeliculas

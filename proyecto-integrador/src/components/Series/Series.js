@@ -79,7 +79,7 @@ class Series extends Component {
     return (
       <article className="peliculaCard">
         <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPelicula.poster_path}`}alt="Cartel serie" className="imagenesPelis"/>
-        <h2 class="tituloPelicula">{this.props.datosPelicula.name}</h2>        
+        <h2 className="tituloPelicula">{this.props.datosPelicula.name}</h2>        
         <p>Fecha de emisión: {this.props.datosPelicula.first_air_date}</p> 
 
 

@@ -12,7 +12,11 @@ function Header() {
             <Link to='/'>Home</Link>
           </li>
           <li className="opciones">
-            <Link to='/favoritos'>Favoritos</Link>
+            <Link to='/favoritosPeliculas'>Peliculas favoritas</Link>
+          </li>
+
+          <li className="opciones">
+            <Link to='/favoritosSeries'> Series favoritas</Link>
           </li>
 
           <li className="opciones">
