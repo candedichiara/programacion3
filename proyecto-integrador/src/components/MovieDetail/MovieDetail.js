@@ -33,7 +33,7 @@ class MovieDetail extends Component {
     return (
         <>
         
-            <h1 className='tituloDetalle'>Detalle de película</h1>
+           
            
                 <section className='detalles'>
                     <article className='portadaPelicula'>

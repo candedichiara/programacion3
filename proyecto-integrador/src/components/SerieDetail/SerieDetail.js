@@ -32,8 +32,7 @@ class SerieDetail extends Component {
     
     return (
         <>
-        
-            <h1 className='tituloDetalle'>Detalle de la serie</h1>
+      
            
                 <section className='detalles'>
 
@@ -42,7 +41,7 @@ class SerieDetail extends Component {
                     </article>
 
                     <article>
-                    <h2 className='titulo-serie'>{this.state.datos.name}</h2>
+                    <h1 className='titulo-serie'>{this.state.datos.name}</h1>
                     </article>
 
                     <article className='info'>                                         

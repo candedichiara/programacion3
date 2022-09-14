@@ -1,14 +1,19 @@
 .titulo-serie {
     font-size: 50px;
-    text-align: justify;
+    /*text-align: justify;*/
     padding: 4px;
     color: white;
     border: 0;
     
 }
+.tituloDetalle {
+    color: white;
+}
 .detalleSerie {
     text-decoration: none;
     color: white; 
+  
+    
 }
 .detalles .portadaSerie {
     width: 30vw;
@@ -16,7 +21,14 @@
     margin: 10px 10px 10px 40px;   
     border-radius: 10px; 
     padding: 0;  
+    margin-top: 8%;
+    
 }
 .portadaSerie {
     margin-left: 50%;
+   
+}
+.detalles {
+    display: flex;
+    flex-direction: row;
 }
