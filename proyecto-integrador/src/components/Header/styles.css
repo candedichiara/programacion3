@@ -1,15 +1,17 @@
 
 
 a {
-    color:black;
-    font-size: 20px;
+    color:white;
+    font-size: 23px;
     font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+
 }
 
 nav {
     display:flex;
     flex-wrap: wrap;
-    background-color: rgb(55, 159, 245);
+    background-color: rgb(1, 6, 28);
     font-family: 'Oswald', sans-serif;
     justify-content:space-between;
 }
@@ -24,6 +26,7 @@ nav {
     margin-right: 50px;
     list-style: none;
     display:inline-block;
+    margin-top: 1.2%;
 }
 
 

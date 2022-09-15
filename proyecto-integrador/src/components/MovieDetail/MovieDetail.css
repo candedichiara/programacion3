@@ -11,8 +11,10 @@
     color: white; 
 } 
 .detalles {
-    display: flex;
-    flex-wrap: wrap;
+    /*display: flex;
+    flex-wrap: wrap; */
+    display:flex;
+    flex-direction: row;
     margin: 0 auto;
     width: 95vw;
     padding: 5px;
@@ -36,8 +38,10 @@
 .info {
     padding: 15px;
     margin-left: 40%;
-    text-align: center;
-    margin-bottom: 20%;
+    text-align: justify;
+    margin-bottom: 30%;
+    margin-top: 20%;
+   
 }
 .portadaPelicula {
     margin-left: 50%;

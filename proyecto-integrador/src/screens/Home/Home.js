@@ -58,7 +58,7 @@ render(){
    return (
       < >
       < BuscadorEspecial buscador={(text)=>this.buscador(text)}/>
-         <h1 className="titulo">Peliculas Más Populares </h1>
+         <h1 className="tituloHome">Peliculas Más Populares </h1>
 
          <section className="listadoPeliculas"> 
          {
@@ -68,18 +68,18 @@ render(){
       }
 
       <div>
-         <Link className="" to='/todasPeliculas' > Ver todas </Link>
+         <Link className="verTodas" to='/todasPeliculas' > Ver todas </Link>
       </div>
          </section>
          
-         <h1 className="titulo">Series Más Populares</h1>
+         <h1 className="tituloHome">Series Más Populares</h1>
          <section className="listadoPeliculas"> {
             this.state.popularSeries.length > 0 ?
             this.state.popularSeries.map ((serie, idx) => <Series key={serie + idx} datosPelicula={serie}/>):
             'Cargando'
          }
          <div>
-         <Link className="" to='/todasSeries' > Ver todas </Link>
+         <Link className="verTodas" to='/todasSeries' > Ver todas </Link>
       </div>
          </section>
       </>
