@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import './AllMoviesCard.css'
-//import {Link} from 'react-router-dom'
 
 class AllMovies extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            verMas: false
+            verMas: false,
+            favorito: false
            /* limit: 10,
             index: 0
             limit: 10,
@@ -28,6 +29,55 @@ class AllMovies extends Component {
         }
       } 
 
+      componentDidMount(){
+        let storage = localStorage.getItem('favoritos')
+        let storageParseado = JSON.parse(storage)
+        if(storageParseado !== null){
+          let esFavorito = storageParseado.includes(this.props.datosPelicula.id) 
+          if(esFavorito) {
+            this.setState({
+              favorito:true
+            })
+          }
+        }
+      } 
+    
+    
+      agregarFavoritos(id){
+        let favStorage = localStorage.getItem('favoritos')
+    
+        if(favStorage === null){
+          let arrayFavoritos = [id]
+          let arrayString = JSON.stringify(arrayFavoritos)
+          localStorage.setItem('favoritos', arrayString)
+        } else {
+          let arrayParseado = JSON.parse(favStorage)
+          arrayParseado.push(id)
+          let arrayString = JSON.stringify(arrayParseado)
+          localStorage.setItem('favoritos', arrayString)
+        }
+    
+        this.setState({
+          favorito:true
+        })
+    
+      }
+    
+      removeFavorites(id){
+        let arrayFavoritos = localStorage.getItem('favoritos')
+        let arrayParseado = JSON.parse(arrayFavoritos) 
+        let filtrarStorage = arrayParseado.filter(elm => elm !== id) 
+    
+        let storageToString = JSON.stringify(filtrarStorage)
+    
+        localStorage.setItem('favoritos', storageToString)
+    
+        this.setState({
+          favorito: false
+        })
+      }
+    
+
     render () {
         return (
             <>
@@ -41,6 +91,17 @@ class AllMovies extends Component {
                 <p className='infoPeliculas'>{this.props.datosPelicula.overview}</p>
                 :""
                }
+
+            {
+             this.state.favorito ?
+             <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) } className='favbtn'>Sacar de favoritos</button>
+              :
+            <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) } className='favbtn'>Añadir a favoritos</button>
+            }
+
+
+
+
                 {
              this.state.verMas ?
 
@@ -50,6 +111,8 @@ class AllMovies extends Component {
    
              <button onClick={()=>this.verMas()}>Ver más</button> 
             }
+
+<button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className='detallebtn'>Ver detalle</Link></button>
                
             </article>
             </>

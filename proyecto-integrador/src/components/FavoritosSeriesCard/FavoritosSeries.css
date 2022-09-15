@@ -1,39 +1,39 @@
 * {
     box-sizing: border-box;
 }
-.favoritoCard{
-
-    width: 17%;
-    margin:0 1rem 2rem;
-    padding:1rem;
-    border-radius: 10px;
-    box-shadow: 0 10px 10px rgba(109, 109, 109, 0.3);
-    max-width:20rem;
+.favoritoCard {
+    width: 24%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgb(1, 6, 28);
     display:flex;
     flex-direction: column;
-    background-color: white;
-    border-style: double;
-    border-color: rgb(0, 0, 0);
-    border-width: 0,5rem;
-    /*Los 3 ultimos no los toma*/
-
-    }
-
-    .portadaPelis{
-        width: 50%;
-    }
-    .titulo {
+    background-color: rgb(1, 6, 28);
+   
+}
+.portadaPelis {
+    width: 80%;
+    margin-left: 0.85cm;
+    margin-bottom: 20px;
+}
+.tituloFavorito{
     font-size: medium;
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     margin-left: 0%;
-    }
+    color: white;
+}
+.estreno {
+    font-size: medium;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-left: 0%;
+    color: white;
+}
 
-    .estreno {
-        font-size: medium;
-        width: 100%;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        text-align: center;
-        margin-left: 0%; 
-    }
+.infoFav{
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

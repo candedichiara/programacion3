@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import './AllSeriesCard.css'
-//import {Link} from 'react-router-dom'
 
 class AllSeries extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            verMas: false
+            verMas: false,
+            favoritos: false
         };
     }
     verMas () {
@@ -21,12 +21,61 @@ class AllSeries extends Component {
         }
       } 
 
+      componentDidMount(){
+        let storage = localStorage.getItem('favoritos')
+        let storageParseado = JSON.parse(storage)
+        if(storageParseado !== null){
+          let esFavorito = storageParseado.includes(this.props.datosPelicula.id) 
+          if(esFavorito) {
+            this.setState({
+              favorito:true
+            })
+          }
+        }
+      } 
+    
+    
+      agregarFavoritos(id){
+        let favStorage = localStorage.getItem('favoritos')
+    
+        if(favStorage === null){
+          let arrayFavoritos = [id]
+          let arrayString = JSON.stringify(arrayFavoritos)
+          localStorage.setItem('favoritos', arrayString)
+        } else {
+          let arrayParseado = JSON.parse(favStorage)
+          arrayParseado.push(id)
+          let arrayString = JSON.stringify(arrayParseado)
+          localStorage.setItem('favoritos', arrayString)
+        }
+    
+        this.setState({
+          favorito:true
+        })
+    
+      }
+    
+      removeFavorites(id){
+        let arrayFavoritos = localStorage.getItem('favoritos')
+        let arrayParseado = JSON.parse(arrayFavoritos) 
+        let filtrarStorage = arrayParseado.filter(elm => elm !== id) 
+    
+        let storageToString = JSON.stringify(filtrarStorage)
+    
+        localStorage.setItem('favoritos', storageToString)
+    
+        this.setState({
+          favorito: false
+        })
+      }
+    
+
     render () {
         return (
             <>
             <article className='seriesCard'>
                 
-                <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt="" className='imagenesSerie'/>
+                <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt="" className='imagenesSerie' />
                 <h2 className='tituloSerie'>{this.props.datosPelicula.name}</h2>
                 <p className='infoSerie'>Idioma original: {this.props.datosPelicula.original_language}</p>
                {
@@ -34,6 +83,15 @@ class AllSeries extends Component {
                 <p className='infoSerie'>{this.props.datosPelicula.overview}</p>
                 :""
                }
+
+        {
+         this.state.favorito ?
+            <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) } className='favbtn'>Sacar de favoritos</button>
+              :
+            <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) } className='favbtn'>Añadir a favoritos</button>
+        }
+
+
                 {
              this.state.verMas ?
 

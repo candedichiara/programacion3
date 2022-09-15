@@ -33,20 +33,14 @@ class SerieDetail extends Component {
     return (
         <>
       
-           
-                <section className='detalles'>
+      
 
-                    <article className='portadaSerie'>
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.datos.poster_path}`} alt={this.state.datos.name} className='portadaSerie'/>
-                    </article>
 
-                    <article>
+                    <article className="detalles">
                     <h1 className='titulo-serie'>{this.state.datos.name}</h1>
-                    </article>
-
-                    <article className='info'>                                         
-
-                        <p className='detalleSerie'>Rating:{this.state.datos.popularity} </p>
+                    <img src={`https://image.tmdb.org/t/p/w342/${this.state.datos.poster_path}`} alt={this.state.datos.name} className='portadaSerie'/>
+                                       
+                     <p className='detalleSerie'>Rating:{this.state.datos.popularity} </p>
 
                         <p className='detalleSerie'>Fecha de estreno:{this.state.datos.first_air_date} </p>
 
@@ -61,7 +55,6 @@ class SerieDetail extends Component {
                             } 
                         </ul>
                     </article>
-                </section>
             
        
         </>

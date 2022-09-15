@@ -1,20 +1,35 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+.detalles{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; 
+    width:95vw;
+    padding:5px;
+    border-radius: 6px;
+    justify-content: center;
+}
+
+
 .titulo-serie {
     font-size: 50px;
-    /*text-align: justify;*/
     padding: 4px;
     color: white;
     border: 0;
     
 }
-.tituloDetalle {
-    color: white;
-}
+
 .detalleSerie {
     text-decoration: none;
     color: white; 
   
-    
 }
+
+
+
 .detalles .portadaSerie {
     width: 30vw;
     height: 70vh;
@@ -24,11 +39,23 @@
     margin-top: 8%;
     
 }
+
+.detalles.info{
+    width:55vw;
+    padding:0px 30px 0px 0px;
+    margin-bottom: 5%;
+}
+
+.info{
+    padding:15px;
+    margin-left:40%;
+    text-align: justify;
+    margin-bottom: 30%;
+    margin-top: 20%;
+}
+
 .portadaSerie {
     margin-left: 50%;
    
 }
-.detalles {
-    display: flex;
-    flex-direction: row;
-}
+

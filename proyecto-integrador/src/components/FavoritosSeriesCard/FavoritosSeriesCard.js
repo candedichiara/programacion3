@@ -27,15 +27,17 @@ class FavoritosSeriesCard extends Component {
             <article className='favoritoCard'>
                 
                 <img src= {`https://image.tmdb.org/t/p/original/` + this.props.datosPelicula.poster_path} alt="" className='portadaPelis'/>
-                <h2 className='titulo'>{this.props.datosPelicula.title}</h2>
-                <p className='estreno'>Fecha de estreno: {this.props.datosPelicula.release_date}</p>
+                <h2 className='tituloFavorito'>{this.props.datosPelicula.title}</h2>
+                <p className='estreno'>Fecha de estreno: {this.props.datosPelicula.first_air_date}</p>
                 
                 {
                     this.state.verMas ? 
-                    <p>{this.props.datosPelicula.overview}</p> 
+                    <p className="infoFav">{this.props.datosPelicula.overview}</p> 
                     : 
                     ""
                 }
+
+                <button onClick={()=> this.props.removeFavorites(this.props.datosPelicula.id) }>Sacar de favoritos</button>
                 
                 {
                     this.state.verMas ?

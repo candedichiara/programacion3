@@ -32,12 +32,29 @@ class FavoritosSeries extends Component{
         }
     }
 
+    removeFavorites(id){
+        let arrayFavoritos = localStorage.getItem('favoritos')
+        let arrayParseado = JSON.parse(arrayFavoritos) 
+        let filtrarStorage = arrayParseado.filter(elm => elm !== id) 
+    
+        let storageToString = JSON.stringify(filtrarStorage)
+    
+        localStorage.setItem('favoritos', storageToString)
+
+        let filtrado = this.state.series.filter(elm => elm.id !== id)
+
+        this.setState({
+        favorito: false,
+        series: filtrado
+        })
+    }
+
     render(){
         return(
             <div className='listadoFavoritos'>
                 {
                     this.state.series.length > 0 ?
-                    this.state.series.map((elm, idx) => <FavoritosSeriesCard key={idx + elm} datosPelicula={elm}/>)
+                    this.state.series.map((elm, idx) => <FavoritosSeriesCard removeFavorites={(id)=>this.removeFavorites(id)} key={idx + elm} datosPelicula={elm}/>)
                     : 'Cargando..'
                 }
             </div>
