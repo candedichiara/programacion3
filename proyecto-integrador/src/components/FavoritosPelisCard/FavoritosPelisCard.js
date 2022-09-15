@@ -21,19 +21,6 @@ class FavoritosPelisCard extends Component {
         }
       }
 
-      removeFavorites(id){
-        let arrayFavoritos = localStorage.getItem('favoritos')
-        let arrayParseado = JSON.parse(arrayFavoritos) 
-        let filtrarStorage = arrayParseado.filter(elm => elm !== id) 
-    
-        let storageToString = JSON.stringify(filtrarStorage)
-    
-        localStorage.setItem('favoritos', storageToString)
-    
-        this.setState({
-          favorito: false
-        })
-      }
 
 
       
@@ -53,7 +40,7 @@ class FavoritosPelisCard extends Component {
                     ""
                 }
 
-         <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) }>Sacar de favoritos</button>
+         <button onClick={()=> this.props.removeFavorites(this.props.datosPelicula.id) }>Sacar de favoritos</button>
                 
                 {
                     this.state.verMas ?

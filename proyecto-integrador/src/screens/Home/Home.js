@@ -40,7 +40,7 @@ componentDidMount(){
 
 buscador(text){
    if (text !== '') 
-   fetch (`https://api.themoviedb.org/3/search/multi?${text}api_key=d3bf40c9b6ae8b0603c799bd0fc81e36`)
+   fetch (`https://api.themoviedb.org/3/search/multi?query=${text}&api_key=d3bf40c9b6ae8b0603c799bd0fc81e36`)
    .then(resp =>resp.json())
    .then (data => console.log(data))
    .catch (err=> console.log(err))
