@@ -3,7 +3,7 @@ import PeliculaPopulares from '../../components/PeliculaPopulares/PeliculaPopula
 import Series from '../../components/Series/Series'
 import "./Home.css"
 import {Link} from 'react-router-dom'
-import Search from '../../components/Search/Search'
+import BuscadorEspecial from '../../components/BuscadorEspecial/BuscadorEspecial'
 
 class Home extends Component{
    constructor(props){
@@ -12,8 +12,8 @@ class Home extends Component{
          //key:'d3bf40c9b6ae8b0603c799bd0fc81e36',
          popularMovies:[], //aparecer personajes
          popularSeries: [],
-         backupPopulares: [],
-         
+        // backupPopulares: [],
+         reultados: [],
       
       
       }
@@ -38,6 +38,14 @@ componentDidMount(){
    .catch(err => console.log (err))
 }
 
+buscador(text){
+   if (text !== '') 
+   fetch (`https://api.themoviedb.org/3/search/multi?${text}api_key=d3bf40c9b6ae8b0603c799bd0fc81e36`)
+   .then(resp =>resp.json())
+   .then (data => console.log(data))
+   .catch (err=> console.log(err))
+}
+
 metodoFiltrar(name){
    let arrayFiltrado = this.state.backupPopulares.filter((elm) => elm.title.toLowerCase().includes(name.toLowerCase()) )
    this.setState({
@@ -49,6 +57,7 @@ metodoFiltrar(name){
 render(){
    return (
       < >
+      < BuscadorEspecial buscador={(text)=>this.buscador(text)}/>
          <h1 className="titulo">Peliculas Más Populares </h1>
 
          <section className="listadoPeliculas"> 
