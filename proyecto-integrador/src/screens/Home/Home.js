@@ -13,7 +13,7 @@ class Home extends Component{
          popularMovies:[], //aparecer personajes
          popularSeries: [],
         // backupPopulares: [],
-         reultados: [],
+         resultados: [],
       
       
       }
@@ -39,12 +39,19 @@ componentDidMount(){
 }
 
 buscador(text){
-   if (text !== '') 
+   if (text !== '') {
    fetch (`https://api.themoviedb.org/3/search/multi?query=${text}&api_key=d3bf40c9b6ae8b0603c799bd0fc81e36`)
    .then(resp =>resp.json())
-   .then (data => console.log(data))
+   .then (data => this.setState({
+      resultados: data.results
+   }))
    .catch (err=> console.log(err))
-}
+   } else {
+      this.setState ({
+         resultados: []
+      })
+   }
+} 
 
 metodoFiltrar(name){
    let arrayFiltrado = this.state.backupPopulares.filter((elm) => elm.title.toLowerCase().includes(name.toLowerCase()) )
@@ -58,6 +65,11 @@ render(){
    return (
       < >
       < BuscadorEspecial buscador={(text)=>this.buscador(text)}/>
+      {
+         this.state.resultados.length > 0 ?
+         this.state.resultados.map(elm => <h2>{elm.title}</h2>)
+         : ''
+      }
          <h1 className="tituloHome">Peliculas Más Populares </h1>
 
          <section className="listadoPeliculas"> 
