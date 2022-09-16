@@ -8,13 +8,7 @@ class AllMovies extends Component {
         this.state = {
             verMas: false,
             favorito: false
-           /* limit: 10,
-            index: 0
-            limit: 10,
-            index: 0
-            //en el primer fetch en la ruta al endpoint en la query paso this.state.index y paso limit={this.state.limit}
-            lo que me trae el primer fetch lo guardo en state --> data []
-            para el método que se encarga de cargar más  */
+        
         };
     }
     verMas () {

@@ -88,6 +88,10 @@ class PeliculaPopulares extends Component {
         ""
         }
 
+        <article className="botones">
+
+       
+
         {
          this.state.favorito ?
             <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) } className='favbtn'>Sacar de favoritos</button>
@@ -105,7 +109,9 @@ class PeliculaPopulares extends Component {
           <button onClick={()=>this.verMas()} className="botonVer">Ver más</button>
         }
          
-         <button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className='detallebtn'>Ver detalle</Link></button>
+         <button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className="linkDetalle">Ver detalle</Link></button>
+         </article>
+      
       </article>
     );
   }

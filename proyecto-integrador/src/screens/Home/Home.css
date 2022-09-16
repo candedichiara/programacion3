@@ -6,6 +6,8 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 3%;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 .tituloHome {
     color: white;

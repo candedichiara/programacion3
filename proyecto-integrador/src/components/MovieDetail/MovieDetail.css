@@ -1,48 +1,48 @@
-.titulo-pelicula {
-    font-size: 50px;
-    text-align: justify;
-    padding: 4px;
-    color: white;
-    border: 0;
+* {
+    box-sizing: border-box;
     
 }
-.detallePelicula {
-    text-decoration: none;
-    color: white; 
-} 
-.detalles {
-    /*display: flex;
-    flex-wrap: wrap; */
-    display:flex;
+
+.detalles{
+    display: flex;
     flex-direction: row;
-    margin: 0 auto;
-    width: 95vw;
-    padding: 5px;
-    border-radius: 6px;
-    align-items: flex-start;
+    
+    
+    }
+
+.titulo-pelicula {
+    color: white;
+    text-align: center;
+    font-size: 55px;
+    
 }
-.detalles .portadaPelicula {
+
+.portadaPelicula {
     width: 30vw;
-    height: 70vh;
+    height: 75vh;
     margin: 10px 10px 10px 40px;   
     border-radius: 10px; 
     padding: 0;  
     margin-top: 8%;
     
+    
 }
-.detalles .info {
-    width: 55vw;
-    padding: 0px 30px 0px 0px;
-    margin-bottom: 5%; 
+
+.info{
+
+    color: white;
+    width: 50%;
+    margin: 100px 10px 10px 40px;
+    padding: 20px;
+    
 }
-.info {
-    padding: 15px;
-    margin-left: 40%;
+
+
+.detallePelicula {
+    color: white;
     text-align: justify;
-    margin-bottom: 30%;
-    margin-top: 20%;
-   
-}
-.portadaPelicula {
-    margin-left: 50%;
-}
+    font-size: 25px;
+    padding-left: 20px;
+    list-style: none;
+} 
+

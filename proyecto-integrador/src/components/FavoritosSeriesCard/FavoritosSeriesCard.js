@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import './FavoritosSeries.css'
 
 class FavoritosSeriesCard extends Component {
@@ -6,7 +7,7 @@ class FavoritosSeriesCard extends Component {
         super(props);
         this.state = {
             verMas: false,
-            favorito:true
+            favorito:true,
         };
     }
     verMas () {
@@ -49,6 +50,8 @@ class FavoritosSeriesCard extends Component {
                    <button onClick={()=> this.verMas()}>Ver más</button>
                    
                 }
+
+            <button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className='detallebtn'>Ver detalle</Link></button>
 
                
             </article>

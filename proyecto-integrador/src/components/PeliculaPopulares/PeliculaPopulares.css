@@ -1,37 +1,68 @@
 * {
     box-sizing: border-box;
-    
+
 }
-.peliculaCard{
+
+.peliculaCard {
     background-color: rgb(1, 6, 28);
     margin-bottom: 20px;
     width: 24%;
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgb(1, 6, 28);
-    /*Los 3 ultimos no los toma*/
 
-    }
+}
 
-    .imagenesPelis{
-        width: 80%;
-        margin-bottom: 20px;
-    }
-    .tituloPelicula {
+.imagenesPelis {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.tituloPelicula {
     font-size: 20px;
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     margin-left: 0%;
     color: white;
+
+}
+
+.botonDetalle {
+    background-color: rgb(132, 134, 145);
+    width:30%;
     
+
+}
+
+.linkDetalle {
+    color: white;
+    font-size: 15px;
+}
+
+.botonVer {
+    color: white;
+    background-color: rgb(132, 134, 145);
+    width:30%;
+    font-size: 15px;
+    margin-bottom: 5px;
+
+
+}
+
+.favbtn {
+    color: white;
+    background-color: rgb(132, 134, 145);
+    width: 50%;
+    font-size: 15px;
+    margin-bottom: 5px;
+
     }
 
-    /*.favbtn {
-
-    }
-    .bontonVer {
-
-    }
-    .detallebtn {
-
-    }*/
+.botones{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+    
+    

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import './FavoritosPelis.css'
 
 class FavoritosPelisCard extends Component {
@@ -52,6 +53,8 @@ class FavoritosPelisCard extends Component {
                    <button onClick={()=> this.verMas()}>Ver más</button>
                    
                 }
+
+        <button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className='detallebtn'>Ver detalle</Link></button>
 
 
                
