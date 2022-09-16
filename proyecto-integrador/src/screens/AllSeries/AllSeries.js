@@ -8,21 +8,36 @@ class AllSeries extends Component {
         super (props)
         this.state = {
             series: [],
-            limite: 16,
-            index: 0,
-            backupSeries: [],    
+            /*limite: 16,
+            index: 0,*/
+            backupSeries: [], 
+            page: 2   
         }
     }
 
     componentDidMount() {
-        fetch (`https://api.themoviedb.org/3/tv/popular?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&index=${this.state.index}&limit=${this.state.limite}`)
+        fetch ('https://api.themoviedb.org/3/tv/popular?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&language=en-US&page=1')
         .then (res => res.json())
         .then (data => this.setState({
             series: data.results,
             backupSeries: data.results,
-            index: this.state.limite
+            /*index: this.state.limite*/
         }))
         .catch(err => console.log (err))
+    }
+
+    mostrarMas() {
+        this.setState ({
+            page: this.state.page + 1
+        })
+        fetch ('https://api.themoviedb.org/3/tv/popular?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&language=en-US&page=' + this.state.page)
+        .then (res => res.json())
+        .then (data => this.setState ({
+            series: this.state.series.concat (data.results),
+            /*index: this.state.index + this.state.limite*/
+            
+        }))
+        .catch (err => console.log(err))
     }
 
     metodoFiltrar(name){
@@ -33,16 +48,7 @@ class AllSeries extends Component {
     }
 
 
-  mostrarMas() {
-    fetch (`https://api.themoviedb.org/3/tv/popular?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&index=${this.state.index}&limit=${this.state.limite}`)
-    .then (res => res.json())
-    .then (data => this.setState ({
-        series: this.state.series.concat (data.results),
-        index: this.state.index + this.state.limite
-        
-    }))
-    .catch (err => console.log(err))
-}
+  
   render () {
     return (
         <>
