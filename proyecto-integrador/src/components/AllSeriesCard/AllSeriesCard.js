@@ -23,7 +23,7 @@ class AllSeries extends Component {
       } 
 
       componentDidMount(){
-        let storage = localStorage.getItem('favoritos')
+        let storage = localStorage.getItem('favoritosSerie')
         let storageParseado = JSON.parse(storage)
         if(storageParseado !== null){
           let esFavorito = storageParseado.includes(this.props.datosPelicula.id) 
@@ -37,17 +37,17 @@ class AllSeries extends Component {
     
     
       agregarFavoritos(id){
-        let favStorage = localStorage.getItem('favoritos')
+        let favStorage = localStorage.getItem('favoritosSerie')
     
         if(favStorage === null){
           let arrayFavoritos = [id]
           let arrayString = JSON.stringify(arrayFavoritos)
-          localStorage.setItem('favoritos', arrayString)
+          localStorage.setItem('favoritosSerie', arrayString)
         } else {
           let arrayParseado = JSON.parse(favStorage)
           arrayParseado.push(id)
           let arrayString = JSON.stringify(arrayParseado)
-          localStorage.setItem('favoritos', arrayString)
+          localStorage.setItem('favoritosSerie', arrayString)
         }
     
         this.setState({
@@ -57,13 +57,13 @@ class AllSeries extends Component {
       }
     
       removeFavorites(id){
-        let arrayFavoritos = localStorage.getItem('favoritos')
+        let arrayFavoritos = localStorage.getItem('favoritosSerie')
         let arrayParseado = JSON.parse(arrayFavoritos) 
         let filtrarStorage = arrayParseado.filter(elm => elm !== id) 
     
         let storageToString = JSON.stringify(filtrarStorage)
     
-        localStorage.setItem('favoritos', storageToString)
+        localStorage.setItem('favoritosSerie', storageToString)
     
         this.setState({
           favorito: false

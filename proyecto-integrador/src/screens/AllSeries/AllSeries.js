@@ -21,6 +21,7 @@ class AllSeries extends Component {
         .then (data => this.setState({
             series: data.results,
             backupSeries: data.results,
+            
             /*index: this.state.limite*/
         }))
         .catch(err => console.log (err))
@@ -33,7 +34,8 @@ class AllSeries extends Component {
         fetch ('https://api.themoviedb.org/3/tv/popular?api_key=d3bf40c9b6ae8b0603c799bd0fc81e36&language=en-US&page=' + this.state.page)
         .then (res => res.json())
         .then (data => this.setState ({
-            series: this.state.series.concat (data.results),
+            series: this.state.series.concat(data.results),
+            backupSeries: this.state.backupSeries.concat(data.results)
             /*index: this.state.index + this.state.limite*/
             
         }))
@@ -55,7 +57,9 @@ class AllSeries extends Component {
         <Search filtrar={(name) => this.metodoFiltrar(name) }/>
         <section className='listadoSeries'>
             {
+                this.state.series.length > 0?
                 this.state.series.map((serie, idx) => <AllSeriesCard key={serie + idx} datosPelicula={serie} />)
+                : <img src='./images/carga.gif' alt='cargando'/>
             }
         </section>
         <div>

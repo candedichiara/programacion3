@@ -50,4 +50,21 @@ body {
 
 
 }
-
+.peliculaCardBuscador {
+    background-color: rgb(1, 6, 28);
+   /* margin-bottom: 20px;*/
+    width: 24%;
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgb(1, 6, 28);
+    
+}
+.listadoPeliculasBuscador {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 3%;
+    /*margin-left: 10px;
+    margin-right: 10px;*/
+    flex-direction: row;
+    
+}

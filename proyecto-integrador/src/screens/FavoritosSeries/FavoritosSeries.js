@@ -11,7 +11,7 @@ class FavoritosSeries extends Component{
         }
     }
     componentDidMount(){
-        let storage = localStorage.getItem('favoritos')
+        let storage = localStorage.getItem('favoritosSerie')
         if(storage!== null){
             let storageParseado = JSON.parse(storage)
             
@@ -33,13 +33,13 @@ class FavoritosSeries extends Component{
     }
 
     removeFavorites(id){
-        let arrayFavoritos = localStorage.getItem('favoritos')
+        let arrayFavoritos = localStorage.getItem('favoritosSerie')
         let arrayParseado = JSON.parse(arrayFavoritos) 
         let filtrarStorage = arrayParseado.filter(elm => elm !== id) 
     
         let storageToString = JSON.stringify(filtrarStorage)
     
-        localStorage.setItem('favoritos', storageToString)
+        localStorage.setItem('favoritosSerie', storageToString)
 
         let filtrado = this.state.series.filter(elm => elm.id !== id)
 
@@ -55,7 +55,7 @@ class FavoritosSeries extends Component{
                 {
                     this.state.series.length > 0 ?
                     this.state.series.map((elm, idx) => <FavoritosSeriesCard removeFavorites={(id)=>this.removeFavorites(id)} key={idx + elm} datosPelicula={elm}/>)
-                    : 'Cargando..'
+                    : <img src='./images/carga.gif' alt='cargando'/>
                 }
             </div>
         )
