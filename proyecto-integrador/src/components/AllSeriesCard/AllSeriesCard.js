@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import './AllSeriesCard.css'
 
 class AllSeries extends Component {
@@ -83,24 +84,27 @@ class AllSeries extends Component {
                 <p className='infoSerie'>{this.props.datosPelicula.overview}</p>
                 :""
                }
+            
+              <article className='botones'>
+              {
+                this.state.favorito ?
+                <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) } className='favbtn'>Sacar de favoritos</button>
+                :
+                <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) } className='favbtn'>Añadir a favoritos</button>
+               }
 
-        {
-         this.state.favorito ?
-            <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) } className='favbtn'>Sacar de favoritos</button>
-              :
-            <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) } className='favbtn'>Añadir a favoritos</button>
-        }
 
+              {
+                this.state.verMas ?
 
-                {
-             this.state.verMas ?
-
-             <button onClick={()=>this.verMas()}>Ver menos</button>
+                <button onClick={()=>this.verMas()} className='botonVer'>Ver menos</button>
    
-             :
+                :
    
-             <button onClick={()=>this.verMas()}>Ver más</button> 
-            }
+                <button onClick={()=>this.verMas()} className='botonVer'>Ver más</button> 
+              }
+              <button className="botonDetalle"><Link to={`/detalleSerie/${this.props.datosPelicula.id}`} className='linkDetalle'>Ver detalle</Link></button>
+              </article>
                
             </article>
             </>

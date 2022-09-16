@@ -81,33 +81,33 @@ class AllMovies extends Component {
                 <h2 className='tituloPeliculas'>{this.props.datosPelicula.title}</h2>
                 <p className='infoPeliculas'>Fecha de estreno: {this.props.datosPelicula.release_date}</p>
                 {
-                this.state.verMas ?
-                <p className='infoPeliculas'>{this.props.datosPelicula.overview}</p>
-                :""
-               }
+                  this.state.verMas ?
+                  <p className='infoPeliculas'>{this.props.datosPelicula.overview}</p>
+                  :""
+                }
 
-            {
-             this.state.favorito ?
-             <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) } className='favbtn'>Sacar de favoritos</button>
-              :
-            <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) } className='favbtn'>Añadir a favoritos</button>
-            }
+                <article className='botones'>
 
-
+                {
+                  this.state.favorito ?
+                  <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) } className='favbtn'>Sacar de favoritos</button>
+                  :
+                  <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) } className='favbtn'>Añadir a favoritos</button>
+                }
 
 
                 {
-             this.state.verMas ?
+                  this.state.verMas ?
 
-             <button onClick={()=>this.verMas()}>Ver menos</button>
+                  <button onClick={()=>this.verMas()} className="botonVer">Ver menos</button>
    
-             :
+                  :
    
-             <button onClick={()=>this.verMas()}>Ver más</button> 
-            }
+                  <button onClick={()=>this.verMas()} className="botonVer">Ver más</button> 
+                }
 
-<button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className='detallebtn'>Ver detalle</Link></button>
-               
+                <button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className='linkDetalle'>Ver detalle</Link></button>
+                </article>
             </article>
             </>
         )

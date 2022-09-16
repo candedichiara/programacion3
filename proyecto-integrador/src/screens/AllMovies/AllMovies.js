@@ -56,7 +56,7 @@ class AllMovies extends Component {
             }
         </section>
         <div>
-            <button onClick={()=> this.mostrarMas()}>Cargar más</button>
+            <button onClick={()=> this.mostrarMas()} className='cargarbtn'>Cargar más</button>
         </div>
         </>
     )

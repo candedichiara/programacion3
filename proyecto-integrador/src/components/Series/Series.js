@@ -89,7 +89,7 @@ class Series extends Component {
         ? <p className="overview">{this.props.datosPelicula.overview}</p> 
         : ""
         }
-
+            <article className="botones">
             {
               this.state.favorito
               ?
@@ -106,8 +106,8 @@ class Series extends Component {
    
              <button onClick={()=>this.verMas()} className="botonVer">Ver más</button> 
             }
-            <button><Link to={`/detalleSerie/${this.props.datosPelicula.id}`} className='detallebtn'>Ver detalle</Link></button> 
-            
+            <button className="botonDetalle"><Link to={`/detalleSerie/${this.props.datosPelicula.id}`} className='linkDetalle'>Ver detalle</Link></button> 
+            </article>
 
       
       </article>

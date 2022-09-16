@@ -6,3 +6,16 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
 }
+.cargarbtn {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: rgb(1, 6, 28);
+    width: 50%;
+    font-size: 28px;
+    margin-bottom: 7px;
+   
+    margin: 20px 0px 20px 25%;
+}

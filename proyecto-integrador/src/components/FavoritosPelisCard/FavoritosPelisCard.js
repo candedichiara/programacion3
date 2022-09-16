@@ -41,21 +41,23 @@ class FavoritosPelisCard extends Component {
                     ""
                 }
 
-         <button onClick={()=> this.props.removeFavorites(this.props.datosPelicula.id) }>Sacar de favoritos</button>
+                <article className='botones'>
+
+                 <button onClick={()=> this.props.removeFavorites(this.props.datosPelicula.id) } className="favbtn">Sacar de favoritos</button>
                 
                 {
                     this.state.verMas ?
                     <section >
                     
-                   <button onClick={() => this.verMas()}>Ver menos</button>
+                   <button onClick={() => this.verMas()} className="botonVer">Ver menos</button>
                    </section>
                    :
-                   <button onClick={()=> this.verMas()}>Ver más</button>
+                   <button onClick={()=> this.verMas()} className="botonVer">Ver más</button>
                    
                 }
 
-        <button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className='detallebtn'>Ver detalle</Link></button>
-
+                <button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className='linkDetalle'>Ver detalle</Link></button>
+                </article>
 
                
             </article>
