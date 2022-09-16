@@ -67,7 +67,16 @@ render(){
       < BuscadorEspecial buscador={(text)=>this.buscador(text)}/>
       {
          this.state.resultados.length > 0 ?
-         this.state.resultados.map(elm => <h2>{elm.title}</h2>)
+         this.state.resultados.map(elm => 
+         <section className="listadoPeliculas">
+         <article className='peliculaCard'>
+            <img src={'https://image.tmdb.org/t/p/original/' + elm.poster_path} className="imagenesPelis" />
+         <h2 className="tituloPelicula">{elm.original_title} {elm.original_name}</h2>
+         <h3 className="tituloPelicula"> {elm.release_date} {elm.first_air_date}</h3>
+         <p className='tituloPelicula'>{elm.media_type}</p>
+         </article>
+         </section>
+         )
          : ''
       }
          <h1 className="tituloHome">Peliculas Más Populares </h1>

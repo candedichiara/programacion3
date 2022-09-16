@@ -1,6 +1,7 @@
 body {
     background-color: black;
 }
+
 .listadoPeliculas{
     display: flex;
     flex-wrap: wrap;
@@ -24,5 +25,29 @@ body {
     text-align: center;
     margin-left: 0%; 
     text-decoration: none;
+}
+.imagenesPelis {
+    width: 80%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+}
+
+.tituloPelicula {
+    font-size: 20px;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-left: 0%;
+    color: white;
+
+}
+.peliculaCard {
+    background-color: rgb(1, 6, 28);
+    margin-bottom: 20px;
+    width: 24%;
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgb(1, 6, 28);
+
+
 }
 
