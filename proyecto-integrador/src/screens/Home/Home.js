@@ -64,50 +64,45 @@ metodoFiltrar(name){
    
 render(){
    return (
-      < >
-      < BuscadorEspecial buscador={(text)=>this.buscador(text)}/>
-      {
-            this.state.resultados.length > 0 ?
-            this.state.resultados.map((elm, idx) => 
-            /*<section className="listadoPeliculasBuscador">
-               <article className='peliculaCardBuscador'>
-                  <img src={'https://image.tmdb.org/t/p/original/' + elm.poster_path} className="imagenesPelis" alt=''/>
-                  <h2 className="tituloPelicula">{elm.original_title} {elm.original_name}</h2>
-                  <h3 className="tituloPelicula"> {elm.release_date} {elm.first_air_date}</h3>
-                  <p className='tituloPelicula'>{elm.media_type}</p>
-               </article>
-            </section>*/
-            <PeliculaPopulares key={elm + idx} datosPelicula={elm}/>
-            )
-         :
-         <>
-         <h1 className="tituloHome">Peliculas Más Populares </h1>
+      <>
+         <BuscadorEspecial buscador={(text)=>this.buscador(text)}/>
 
-         <section className="listadoPeliculas"> 
          {
-            this.state.popularMovies.length > 0?
-            this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>):
-            <img src='./images/carga.gif' alt='cargando'/>
+            this.state.resultados.length > 0 
+            ?
+               <>
+                  <h1 className="tituloHome">Resultados de busqueda</h1>
+                  <section className="listadoPeliculas"> 
+                     {this.state.resultados.map((elm, idx) => <PeliculaPopulares key={elm + idx} datosPelicula={elm}/>)}
+                  </section>
+               </>
+            :
+               <>
+                  <h1 className="tituloHome">Peliculas Más Populares </h1>
+                  <section className="listadoPeliculas"> 
+                  {
+                     this.state.popularMovies.length > 0?
+                     this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>):
+                     <img src='./images/carga.gif' alt='cargando'/>
+                  }
+                     <div>
+                        <Link className="verTodas" to='/todasPeliculas' > Ver todas </Link>
+                     </div>
+                  </section>
+
+                  <h1 className="tituloHome">Series Más Populares</h1>
+                  <section className="listadoPeliculas"> 
+                     {
+                     this.state.popularSeries.length > 0 ?
+                     this.state.popularSeries.map ((serie, idx) => <Series key={serie + idx} datosPelicula={serie}/>):
+                     <img src='./images/carga.gif' alt='cargando'/>
+                     }
+                     <div>
+                        < Link className="verTodas" to='/todasSeries' > Ver todas </Link>
+                     </div>
+                  </section> 
+               </>
          }
-
-            <div>
-               <Link className="verTodas" to='/todasPeliculas' > Ver todas </Link>
-            </div>
-         </section>
-
-         <h1 className="tituloHome">Series Más Populares</h1>
-         <section className="listadoPeliculas"> 
-            {
-            this.state.popularSeries.length > 0 ?
-            this.state.popularSeries.map ((serie, idx) => <Series key={serie + idx} datosPelicula={serie}/>):
-            <img src='./images/carga.gif' alt='cargando'/>
-            }
-            <div>
-               < Link className="verTodas" to='/todasSeries' > Ver todas </Link>
-            </div>
-         </section>
-         </>
-      }
          
       </>
 

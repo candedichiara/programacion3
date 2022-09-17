@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./BuscadorEspecial.css"
 
 class BuscadorEspecial extends Component {
     constructor(props){
@@ -20,7 +21,7 @@ class BuscadorEspecial extends Component {
 
     render() {
         return (
-            <form onSubmit={(event)=> this.prevenirRefresh(event)}>
+            <form onSubmit={(event)=> this.prevenirRefresh(event)} className="buscadorE">
                 <input type='text' onChange={(event)=> this.actualizarEstadoInput(event)} value={this.state.valorInput} placeholder='Busca peliculas o series'/> 
             </form>
         )
