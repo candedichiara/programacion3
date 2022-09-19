@@ -10,11 +10,9 @@ class Home extends Component{
    constructor(props){
       super(props)
       this.state = {
-         //key:'d3bf40c9b6ae8b0603c799bd0fc81e36',
-         popularMovies:[], //aparecer personajes
+         popularMovies:[], 
          popularSeries: [],
-        // backupPopulares: [],
-         resultados: [],
+         resultados: []
       
       
       }

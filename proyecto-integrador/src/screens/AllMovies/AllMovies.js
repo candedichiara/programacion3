@@ -8,8 +8,6 @@ class AllMovies extends Component {
         super (props)
         this.state = {
             peliculas: [],
-            /*limite: 16,
-            index: 0, */
             page: 2,
             backupPopulares: [],        
         
@@ -22,7 +20,7 @@ class AllMovies extends Component {
         .then (data => this.setState({
             peliculas: data.results,
             backupPopulares: data.results,
-            /*index: this.state.limite*/
+            
         }))
         .catch(err => console.log (err))
     }
@@ -35,7 +33,7 @@ class AllMovies extends Component {
         .then (data => this.setState ({
             peliculas: this.state.peliculas.concat(data.results),
             backupPopulares: this.state.backupPopulares.concat(data.results)
-            /*index: this.state.index + this.state.limite*/
+            
             
             
         }))

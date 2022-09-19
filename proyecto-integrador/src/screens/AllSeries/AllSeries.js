@@ -8,8 +8,6 @@ class AllSeries extends Component {
         super (props)
         this.state = {
             series: [],
-            /*limite: 16,
-            index: 0,*/
             backupSeries: [], 
             page: 2   
         }
@@ -22,7 +20,6 @@ class AllSeries extends Component {
             series: data.results,
             backupSeries: data.results,
             
-            /*index: this.state.limite*/
         }))
         .catch(err => console.log (err))
     }
@@ -36,7 +33,6 @@ class AllSeries extends Component {
         .then (data => this.setState ({
             series: this.state.series.concat(data.results),
             backupSeries: this.state.backupSeries.concat(data.results)
-            /*index: this.state.index + this.state.limite*/
             
         }))
         .catch (err => console.log(err))
