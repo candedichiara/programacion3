@@ -60,7 +60,7 @@ class AllMovies extends Component {
             {
                 this.state.peliculas.length > 0 ?
                 this.state.peliculas.map((pelicula, idx) => <AllMoviesCard key={pelicula + idx} datosPelicula={pelicula} />)
-                : <img src='./images/carga.gif' alt='cargando'/>
+                : <img src='./images/loading.gif' alt='cargando'/>
             }
         </section>
         <div>

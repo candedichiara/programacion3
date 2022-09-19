@@ -59,7 +59,7 @@ class AllSeries extends Component {
             {
                 this.state.series.length > 0?
                 this.state.series.map((serie, idx) => <AllSeriesCard key={serie + idx} datosPelicula={serie} />)
-                : <img src='./images/carga.gif' alt='cargando'/>
+                : <img src='./images/loading.gif' alt='cargando'/>
             }
         </section>
         <div>

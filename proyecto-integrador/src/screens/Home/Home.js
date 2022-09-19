@@ -83,7 +83,7 @@ render(){
                   {
                      this.state.popularMovies.length > 0?
                      this.state.popularMovies.map((pelicula, idx)=> <PeliculaPopulares key={pelicula + idx} datosPelicula={pelicula}/>):
-                     <img src='./images/carga.gif' alt='cargando'/>
+                     <img src='./images/loading.gif' alt='cargando'/>
                   }
                      <div>
                         <Link className="verTodas" to='/todasPeliculas' > Ver todas </Link>
@@ -95,7 +95,7 @@ render(){
                      {
                      this.state.popularSeries.length > 0 ?
                      this.state.popularSeries.map ((serie, idx) => <Series key={serie + idx} datosPelicula={serie}/>):
-                     <img src='./images/carga.gif' alt='cargando'/>
+                     <img src='./images/loading.gif' alt='cargando'/>
                      }
                      <div>
                         < Link className="verTodas" to='/todasSeries' > Ver todas </Link>

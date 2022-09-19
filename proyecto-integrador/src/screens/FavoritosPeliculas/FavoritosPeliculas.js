@@ -54,7 +54,7 @@ class FavoritosPeliculas extends Component{
                 {
                     this.state.peliculas.length > 0 ?
                     this.state.peliculas.map((elm, idx) => <FavoritosPelisCard removeFavorites={(id)=>this.removeFavorites(id)} key={idx + elm} datosPelicula={elm}/>)
-                    : <img src='./images/carga.gif' alt='cargando'/>
+                    : <img src='./images/loading.gif' alt='cargando'/>
                 }
             </div>
         )
