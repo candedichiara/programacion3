@@ -1,47 +1,47 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import "./PeliculaPopulares.css"
 
 class PeliculaPopulares extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        verMas: false,
-        favorito: false
+      verMas: false,
+      favorito: false
     };
   }
-  
+
   verMas() {
-    if (this.state.verMas){
-     this.setState ({
-         verMas: false
-     })
+    if (this.state.verMas) {
+      this.setState({
+        verMas: false
+      })
     } else {
-         this.setState ({
-             verMas: true
-         })
+      this.setState({
+        verMas: true
+      })
     }
-   }
+  }
 
 
-  componentDidMount(){
+  componentDidMount() {
     let storage = localStorage.getItem('favoritos')
     let storageParseado = JSON.parse(storage)
-    if(storageParseado !== null){
-      let esFavorito = storageParseado.includes(this.props.datosPelicula.id) 
-      if(esFavorito) {
+    if (storageParseado !== null) {
+      let esFavorito = storageParseado.includes(this.props.datosPelicula.id)
+      if (esFavorito) {
         this.setState({
-          favorito:true
+          favorito: true
         })
       }
     }
-  } 
+  }
 
 
-  agregarFavoritos(id){
+  agregarFavoritos(id) {
     let favStorage = localStorage.getItem('favoritos')
 
-    if(favStorage === null){
+    if (favStorage === null) {
       let arrayFavoritos = [id]
       let arrayString = JSON.stringify(arrayFavoritos)
       localStorage.setItem('favoritos', arrayString)
@@ -53,15 +53,15 @@ class PeliculaPopulares extends Component {
     }
 
     this.setState({
-      favorito:true
+      favorito: true
     })
 
   }
 
-  removeFavorites(id){
+  removeFavorites(id) {
     let arrayFavoritos = localStorage.getItem('favoritos')
-    let arrayParseado = JSON.parse(arrayFavoritos) 
-    let filtrarStorage = arrayParseado.filter(elm => elm !== id) 
+    let arrayParseado = JSON.parse(arrayFavoritos)
+    let filtrarStorage = arrayParseado.filter(elm => elm !== id)
 
     let storageToString = JSON.stringify(filtrarStorage)
 
@@ -76,42 +76,42 @@ class PeliculaPopulares extends Component {
   render() {
     return (
       <article className="peliculaCard">
-        <img src={"https://image.tmdb.org/t/p/original/" + this.props.datosPelicula.poster_path}alt="{this.props.datosPelicula.title}" className="imagenesPelis"/>
+        <img src={"https://image.tmdb.org/t/p/original/" + this.props.datosPelicula.poster_path} alt="{this.props.datosPelicula.title}" className="imagenesPelis" />
         <h2 className="tituloPelicula" >{this.props.datosPelicula.title} </h2>
-        
+
         <h3 className="tituloPelicula">({this.props.datosPelicula.release_date})</h3>
 
         {
-        this.state.verMas ? 
-          <p className="overview">{this.props.datosPelicula.overview}</p> 
-        : 
-        ""
+          this.state.verMas ?
+            <p className="overview">{this.props.datosPelicula.overview}</p>
+            :
+            ""
         }
 
         <article className="botones">
 
-       
 
-        {
-         this.state.favorito ?
-            <button onClick={()=> this.removeFavorites(this.props.datosPelicula.id) } className='favbtn'>Sacar de favoritos</button>
+
+          {
+            this.state.favorito ?
+              <button onClick={() => this.removeFavorites(this.props.datosPelicula.id)} className='favbtn'>Sacar de favoritos</button>
               :
-            <button onClick={()=> this.agregarFavoritos(this.props.datosPelicula.id) } className='favbtn'>Añadir a favoritos</button>
-        }
+              <button onClick={() => this.agregarFavoritos(this.props.datosPelicula.id)} className='favbtn'>Añadir a favoritos</button>
+          }
 
-        {
-          this.state.verMas ?
+          {
+            this.state.verMas ?
 
-          <button onClick={()=>this.verMas()} className="botonVer">Ver menos</button>
+              <button onClick={() => this.verMas()} className="botonVer">Ver menos</button>
 
-          :
+              :
 
-          <button onClick={()=>this.verMas()} className="botonVer">Ver más</button>
-        }
-         
-         <button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className="linkDetalle">Ver detalle</Link></button>
-         </article>
-      
+              <button onClick={() => this.verMas()} className="botonVer">Ver más</button>
+          }
+
+          <button className="botonDetalle"><Link to={`/detalle/${this.props.datosPelicula.id}`} className="linkDetalle">Ver detalle</Link></button>
+        </article>
+
       </article>
     );
   }
